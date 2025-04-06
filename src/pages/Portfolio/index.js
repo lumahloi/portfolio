@@ -3,14 +3,18 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
+
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
-import CenteredBlogCard from "examples/Cards/BlogCards/CenteredBlogCard";
-import bgImage from "assets/images/bg-cats.gif";
+
 import TransparentBlogCard from "examples/Cards/BlogCards/TransparentBlogCard";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 import DefaultFooter from "examples/Footers/DefaultFooter";
+
+import bgImage from "assets/images/bg-cats.gif";
+import profileImage from "assets/images/profile-img.png";
+
 import footerRoutes from "footer.routes";
 
 function Portfolio() {
@@ -160,9 +164,6 @@ function Portfolio() {
               </MKTypography>
               <Stack direction="row" spacing={1} mt={3}>
                 <MKButton color="white">Get Started</MKButton>
-                <MKButton variant="text" color="white">
-                  Read more
-                </MKButton>
               </Stack>
             </Grid>
           </Container>
@@ -183,15 +184,34 @@ function Portfolio() {
           <Container>
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={12} lg={4} md={12} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
-                <CenteredBlogCard
-                  image={bgImage}
-                  action={{
-                    type: "internal",
-                    route: "pages/company/about-us",
-                    color: "info",
-                    label: "GitHub",
-                  }}
-                />
+                <Card>
+                  <MKBox position="relative" borderRadius="lg" mx={2} mt={-3}>
+                    <MKBox
+                      component="img"
+                      src={profileImage}
+                      alt="Lumah Pereira em Pixel Art"
+                      borderRadius="lg"
+                      width="100%"
+                      position="relative"
+                      zIndex={1}
+                    />
+                    <MKBox
+                      borderRadius="lg"
+                      shadow="md"
+                      width="100%"
+                      height="100%"
+                      position="absolute"
+                      left={0}
+                      top={0}
+                      sx={{
+                        backgroundImage: `url(${profileImage})`,
+                        transform: "scale(0.94)",
+                        filter: "blur(12px)",
+                        backgroundSize: "cover",
+                      }}
+                    />
+                  </MKBox>
+                </Card>
               </Grid>
               <Grid item xs={12} lg={6} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
                 <Grid container justifyContent="flex-start">
