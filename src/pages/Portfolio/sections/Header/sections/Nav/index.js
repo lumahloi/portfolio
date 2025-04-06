@@ -20,7 +20,7 @@ export default function Nav() {
                             py={0.8125}
                             mr={2}
                         >
-                            Material Design
+                            Lumah Pereira
                         </MKTypography>
                         <MKButton
                             variant="outlined"
@@ -47,7 +47,7 @@ export default function Nav() {
                                     p={1}
                                     onClick={(e) => e.preventDefault()}
                                 >
-                                    Home
+                                    Sobre
                                 </MKTypography>
                             </MKBox>
                             <MKBox component="li">
@@ -60,7 +60,7 @@ export default function Nav() {
                                     p={1}
                                     onClick={(e) => e.preventDefault()}
                                 >
-                                    About Us
+                                    Projetos
                                 </MKTypography>
                             </MKBox>
                             <MKBox component="li">
@@ -73,7 +73,20 @@ export default function Nav() {
                                     p={1}
                                     onClick={(e) => e.preventDefault()}
                                 >
-                                    Contact Us
+                                    Experiência
+                                </MKTypography>
+                            </MKBox>
+                            <MKBox component="li">
+                                <MKTypography
+                                    component={Link}
+                                    href="#"
+                                    variant="button"
+                                    color="white"
+                                    fontWeight="regular"
+                                    p={1}
+                                    onClick={(e) => e.preventDefault()}
+                                >
+                                    Contato
                                 </MKTypography>
                             </MKBox>
                         </MKBox>

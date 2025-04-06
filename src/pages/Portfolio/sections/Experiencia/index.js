@@ -19,23 +19,31 @@ export default function Experiencia() {
                     >
                         <MKTypography variant="h2">Experiência profissional</MKTypography>
                     </Grid>
+
                     <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">
-                        <Grid item xs={12} md={6} lg={4}>
+                        <Grid item xs={12} md={6} lg={12}>
                             <DefaultReviewCard
-                                color="info"
+                                color="primary"
+                                name="Estagiária em Desenvolvimento Web"
+                                where="Ministério Público do Rio de Janeiro"
+                                date="Julho 2024 - o momento"
+                                review={`Fui responsável por contribuições significativas que impactaram diretamente a eficiência e performance dos projetos. Atuei no desenvolvimento e otimização de sistemas web utilizando React e Django, sempre com foco em melhorar a qualidade do código e a experiência do usuário.
+                                
+                                - Otimização na velocidade de carregamento de aplicações web através da refatoração de componentes React;\n
+                                - Redução no tempo de processamento de operações críticas após a reestruturação de algoritmos em Python e melhorias nas queries do banco de dados;\n
+                                - Implementação de boas práticas de código que diminuíram os bugs reportados em produção, aumentando a estabilidade dos sistemas;\n
+                                - Colaboração ativa no Scrum, participando do planejamento de sprints e ajudando a equipe a entregar features mais rápido devido a uma melhor organização de tarefas.`}
+                            />
+                        </Grid>
+
+                        {/* <Grid item xs={12} md={6} lg={12}>
+                            <DefaultReviewCard
+                                color="transparent"
                                 name="Estagiária em Desenvolvimento Web"
                                 date="Julho 2024 - Julho 2025"
                                 review="I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"
                             />
-                        </Grid>
-                        {/* <Grid item xs={12} md={6} lg={4}>
-                        <DefaultReviewCard
-                          name="Nick Willever"
-                          date="1 day ago"
-                          review="This is an excellent product, the documentation is excellent and helped me get things done more efficiently."
-                          rating={5}
-                        />
-                      </Grid> */}
+                        </Grid> */}
                     </Grid>
                 </Container>
             </MKBox>
