@@ -1,50 +1,11 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// react-router components
-import { Link } from "react-router-dom";
-
-// prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
-
-// @mui material components
 import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
-import MuiLink from "@mui/material/Link";
-
-// Material Kit 2 React components
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function TransparentBlogCard({ image, title, description, action }) {
-  const cardActionStyles = {
-    display: "flex",
-    alignItems: "center",
-    width: "max-content",
-
-    "& .material-icons, .material-icons-round,": {
-      transform: `translateX(2px)`,
-      transition: "transform 0.2s cubic-bezier(0.34,1.61,0.7,1.3)",
-    },
-
-    "&:hover .material-icons, &:focus .material-icons, &:hover .material-icons-round, &:focus .material-icons-round":
-      {
-        transform: `translateX(6px)`,
-      },
-  };
-
+function TransparentBlogCard({ image, title, description, tags = [] }) {
   const imageTemplate = (
     <MKBox position="relative" borderRadius="lg">
       <MKBox
@@ -83,86 +44,87 @@ function TransparentBlogCard({ image, title, description, action }) {
         overflow: "visible",
       }}
     >
-      {action.type === "internal" ? (
-        <Link to={action.route}>{imageTemplate}</Link>
-      ) : (
-        <MuiLink href={action.route} target="_blank" rel="noreferrer">
-          {imageTemplate}
-        </MuiLink>
-      )}
+      {imageTemplate}
+
       <MKBox pt={2} pb={3}>
-        {action.type === "internal" ? (
-          <Link to={action.route} sx={cardActionStyles}>
-            <MKTypography variant="h5" gutterBottom>
-              {title}
-            </MKTypography>
-          </Link>
-        ) : (
-          <MuiLink href={action.route} target="_blank" rel="noreferrer" sx={cardActionStyles}>
-            <MKTypography variant="h5" gutterBottom>
-              {title}
-            </MKTypography>
-          </MuiLink>
-        )}
+        <MKTypography variant="h5" gutterBottom>
+          {title}
+        </MKTypography>
+
         <MKTypography variant="body2" component="p" color="text" mb={3}>
           {description}
         </MKTypography>
-        {action.type === "internal" ? (
-          <MKTypography
-            component={Link}
-            to={action.route}
-            variant="body2"
-            fontWeight="regular"
-            color={action.color}
-            textTransform="capitalize"
-            sx={cardActionStyles}
-          >
-            {action.label}
-            <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
-          </MKTypography>
-        ) : (
-          <MKTypography
-            component={MuiLink}
-            href={action.route}
-            target="_blank"
-            rel="noreferrer"
-            variant="body2"
-            fontWeight="regular"
-            color={action.color}
-            textTransform="capitalize"
-            sx={cardActionStyles}
-          >
-            {action.label}
-            <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
-          </MKTypography>
+
+        {tags.length > 0 && (
+          <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+            {tags.map((tag) => (
+              <Chip
+                key={tag}
+                label={tag}
+                size="small"
+                sx={{
+                  marginBottom: 1,
+                  backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.7)`, // Adiciona transparência 70%
+                  color: "white !important", // Garante texto branco
+                  backdropFilter: "blur(6px)", // Efeito de vidro fosco
+                  border: "1px solid rgba(255, 255, 255, 0.2)", // Borda sutil
+                  "& .MuiChip-label": {
+                    color: "white", // Texto branco
+                    fontWeight: 500, // Peso da fonte
+                  },
+                  "& .MuiChip-icon": {
+                    color: "white",
+                    marginLeft: "4px",
+                    opacity: 0.9, // Opacidade do ícone
+                  },
+                  "&:hover": {
+                    backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.9)`, // Efeito hover
+                  }
+                }}
+              />
+            ))}
+          </Stack>
         )}
       </MKBox>
     </Card>
   );
 }
 
-// Typechecking props for the TransparentBlogCard
+function getTagColor(tag) {
+  const colorMap = {
+    "Flutterflow": "#4c3af0",
+    "React": "#61dbfb",
+    "JavaScript": "#f7e018",
+    "PHP": "#777bb3",
+    "Java": "#ec2025",
+    "Firebase": "#ffcb2b",
+    "MySQL": "#005d8a",
+    "Node": "#80be03",
+    "HTML": "#ff4b00",
+    "CSS": "#1572b6",
+    "Bootstrap": "#7708f7",
+    "Supabase": "#3ecf8e",
+  };
+
+  return colorMap[tag] || "0B0D0E";
+}
+
+function hexToRgb(hex) {
+  hex = hex.replace('#', '');
+  
+  // Converte para RGB
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  
+  return `${r}, ${g}, ${b}`;
+}
+
 TransparentBlogCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  action: PropTypes.shape({
-    type: PropTypes.oneOf(["external", "internal"]),
-    route: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    color: PropTypes.oneOf([
-      "inherit",
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "error",
-      "light",
-      "dark",
-      "text",
-    ]).isRequired,
-  }).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default TransparentBlogCard;
