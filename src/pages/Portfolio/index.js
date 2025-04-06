@@ -256,71 +256,6 @@ function Portfolio() {
                   }}
                 />
               </Grid>
-              <Grid item xs={12} md={6} sm={12} lg={4}>
-                <TransparentBlogCard
-                  image={bgImage}
-                  title="MateLabs machine learning"
-                  description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
-                  action={{
-                    type: "internal",
-                    route: "/pages/blogs/author",
-                    color: "info",
-                    label: "read more",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} sm={12} lg={4}>
-                <TransparentBlogCard
-                  image={bgImage}
-                  title="MateLabs machine learning"
-                  description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
-                  action={{
-                    type: "internal",
-                    route: "/pages/blogs/author",
-                    color: "info",
-                    label: "read more",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} sm={12} lg={4}>
-                <TransparentBlogCard
-                  image={bgImage}
-                  title="Rover raised $65 million"
-                  description="Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea behind Rover ..."
-                  action={{
-                    type: "internal",
-                    route: "/pages/blogs/author",
-                    color: "info",
-                    label: "read more",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} sm={12} lg={4}>
-                <TransparentBlogCard
-                  image={bgImage}
-                  title="MateLabs machine learning"
-                  description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
-                  action={{
-                    type: "internal",
-                    route: "/pages/blogs/author",
-                    color: "info",
-                    label: "read more",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} sm={12} lg={4}>
-                <TransparentBlogCard
-                  image={bgImage}
-                  title="MateLabs machine learning"
-                  description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
-                  action={{
-                    type: "internal",
-                    route: "/pages/blogs/author",
-                    color: "info",
-                    label: "read more",
-                  }}
-                />
-              </Grid>
             </Grid>
           </Container>
         </MKBox>
@@ -335,34 +270,25 @@ function Portfolio() {
               justifyContent="center"
               sx={{ mx: "auto", textAlign: "center" }}
             >
-              <MKTypography variant="h2">Experiências profissionais</MKTypography>
+              <MKTypography variant="h2">Experiência profissional</MKTypography>
             </Grid>
-            <Grid container spacing={3} sx={{ mt: 8 }}>
+            <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">
               <Grid item xs={12} md={6} lg={4}>
+                <DefaultReviewCard
+                  color="info"
+                  name="Estagiária em Desenvolvimento Web"
+                  date="Julho 2024 - Julho 2025"
+                  review="I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"
+                />
+              </Grid>
+              {/* <Grid item xs={12} md={6} lg={4}>
                 <DefaultReviewCard
                   name="Nick Willever"
                   date="1 day ago"
                   review="This is an excellent product, the documentation is excellent and helped me get things done more efficiently."
                   rating={5}
                 />
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <DefaultReviewCard
-                  color="info"
-                  name="Shailesh Kushwaha"
-                  date="1 week ago"
-                  review="I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"
-                  rating={5}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <DefaultReviewCard
-                  name="Samuel Kamuli"
-                  date="3 weeks ago"
-                  review="Great product. Helped me cut the time to set up a site. I used the components within instead of starting from scratch. I highly recommend for developers who want to spend more time on the backend!."
-                  rating={5}
-                />
-              </Grid>
+              </Grid> */}
             </Grid>
           </Container>
         </MKBox>
@@ -399,6 +325,26 @@ function Portfolio() {
                   Creative Tim where you can find the Design System in HTML. Start a new project or give
                   an old Bootstrap project a new look!
                 </MKTypography>
+                <MKButton
+                  variant="gradient"
+                  color="info"
+                  size="large"
+                  component="a"
+                  href="https://www.creative-tim.com/product/material-kit-react"
+                  sx={{ mb: 2 }}
+                >
+                  Download Now
+                </MKButton>
+                <MKButton
+                  variant="gradient"
+                  color="info"
+                  size="large"
+                  component="a"
+                  href="https://www.creative-tim.com/product/material-kit-react"
+                  sx={{ mb: 2 }}
+                >
+                  Download Now
+                </MKButton>
                 <MKButton
                   variant="gradient"
                   color="info"
