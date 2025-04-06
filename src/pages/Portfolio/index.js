@@ -14,6 +14,9 @@ import post1 from "assets/images/examples/testimonial-6-2.jpg";
 import post2 from "assets/images/examples/testimonial-6-3.jpg";
 import post3 from "assets/images/examples/blog-9-4.jpg";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
+import bgImage2 from "assets/images/shapes/waves-white.svg";
+import DefaultFooter from "examples/Footers/DefaultFooter";
+import footerRoutes from "footer.routes";
 
 function Portfolio() {
   return (
@@ -348,7 +351,58 @@ function Portfolio() {
             </Grid>
           </Container>
         </MKBox>
+
+        <MKBox component="section" py={{ xs: 0, sm: 12 }}>
+          <MKBox
+            variant="gradient"
+            bgColor="dark"
+            position="relative"
+            borderRadius="xl"
+            sx={{ overflow: "hidden" }}
+          >
+            <MKBox
+              component="img"
+              src={bgImage2}
+              alt="pattern-lines"
+              position="absolute"
+              top={0}
+              left={0}
+              width="100%"
+              zIndex={1}
+              opacity={0.2}
+            />
+            <Container sx={{ position: "relative", zIndex: 2, py: 12 }}>
+              <Grid container item xs={12} md={7} justifyContent="center" mx="auto" textAlign="center">
+                <MKTypography variant="h3" color="white">
+                  Do you love this awesome
+                </MKTypography>
+                <MKTypography variant="h3" color="white" mb={1}>
+                  UI Kit for ReactJS &amp; MUI?
+                </MKTypography>
+                <MKTypography variant="body2" color="white" mb={6}>
+                  Cause if you do, it can be yours for FREE. Hit the button below to navigate to
+                  Creative Tim where you can find the Design System in HTML. Start a new project or give
+                  an old Bootstrap project a new look!
+                </MKTypography>
+                <MKButton
+                  variant="gradient"
+                  color="info"
+                  size="large"
+                  component="a"
+                  href="https://www.creative-tim.com/product/material-kit-react"
+                  sx={{ mb: 2 }}
+                >
+                  Download Now
+                </MKButton>
+              </Grid>
+            </Container>
+          </MKBox>
+        </MKBox>
       </Card>
+
+      <MKBox pt={6} px={1} mt={6}>
+        <DefaultFooter content={footerRoutes} />
+      </MKBox>
     </>
   );
 }
