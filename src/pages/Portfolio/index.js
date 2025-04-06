@@ -8,13 +8,8 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import CenteredBlogCard from "examples/Cards/BlogCards/CenteredBlogCard";
 import bgImage from "assets/images/bg-cats.gif";
-import img from "assets/images/rotating-card-bg-front.jpeg"
 import TransparentBlogCard from "examples/Cards/BlogCards/TransparentBlogCard";
-import post1 from "assets/images/examples/testimonial-6-2.jpg";
-import post2 from "assets/images/examples/testimonial-6-3.jpg";
-import post3 from "assets/images/examples/blog-9-4.jpg";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
-import bgImage2 from "assets/images/shapes/waves-white.svg";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 import footerRoutes from "footer.routes";
 
@@ -189,7 +184,7 @@ function Portfolio() {
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={12} lg={4} md={12} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
                 <CenteredBlogCard
-                  image={img}
+                  image={bgImage}
                   action={{
                     type: "internal",
                     route: "pages/company/about-us",
@@ -230,7 +225,7 @@ function Portfolio() {
             <Grid container spacing={5} justifyContent="space-around">
               <Grid item xs={12} md={6} sm={12} lg={4}>
                 <TransparentBlogCard
-                  image={post1}
+                  image={bgImage}
                   title="Rover raised $65 million"
                   description="Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea behind Rover ..."
                   action={{
@@ -243,7 +238,7 @@ function Portfolio() {
               </Grid>
               <Grid item xs={12} md={6} sm={12} lg={4}>
                 <TransparentBlogCard
-                  image={post2}
+                  image={bgImage}
                   title="MateLabs machine learning"
                   description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
                   action={{
@@ -256,7 +251,7 @@ function Portfolio() {
               </Grid>
               <Grid item xs={12} md={6} sm={12} lg={4}>
                 <TransparentBlogCard
-                  image={post3}
+                  image={bgImage}
                   title="MateLabs machine learning"
                   description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
                   action={{
@@ -269,7 +264,7 @@ function Portfolio() {
               </Grid>
               <Grid item xs={12} md={6} sm={12} lg={4}>
                 <TransparentBlogCard
-                  image={post1}
+                  image={bgImage}
                   title="Rover raised $65 million"
                   description="Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea behind Rover ..."
                   action={{
@@ -282,7 +277,7 @@ function Portfolio() {
               </Grid>
               <Grid item xs={12} md={6} sm={12} lg={4}>
                 <TransparentBlogCard
-                  image={post2}
+                  image={bgImage}
                   title="MateLabs machine learning"
                   description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
                   action={{
@@ -295,7 +290,7 @@ function Portfolio() {
               </Grid>
               <Grid item xs={12} md={6} sm={12} lg={4}>
                 <TransparentBlogCard
-                  image={post3}
+                  image={bgImage}
                   title="MateLabs machine learning"
                   description="If you’ve ever wanted to train a machine learning model and integrate it with IFTTT, you now can with ..."
                   action={{
@@ -361,8 +356,8 @@ function Portfolio() {
             sx={{ overflow: "hidden" }}
           >
             <MKBox
-              component="img"
-              src={bgImage2}
+              component="bgImage"
+              src={bgImage}
               alt="pattern-lines"
               position="absolute"
               top={0}
