@@ -5,14 +5,11 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import MKBox from "components/MKBox";
 import bgOffice from "assets/images/bg-office.gif";
-import Nav from "pages/Portfolio/sections/Header/sections/Nav";
 
 export default function Header() {
   return (
     <>
       <MKBox component="header" position="relative">
-        <Nav />
-
         <MKBox
           display="flex"
           alignItems="center"

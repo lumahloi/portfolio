@@ -3,6 +3,7 @@ import Card from "@mui/material/Card";
 import MKBox from "components/MKBox";
 
 import DefaultFooter from "examples/Footers/DefaultFooter";
+import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 import footerRoutes from "footer.routes";
 
@@ -12,9 +13,22 @@ import Projetos from "pages/Portfolio/sections/Projetos";
 import Experiencia from "pages/Portfolio/sections/Experiencia";
 import Contato from "pages/Portfolio/sections/Contato";
 
+import routes from "routes";
+
 function Portfolio() {
   return (
     <>
+      <DefaultNavbar
+        brand="Lumah Pereira"
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "src/pages/Portfolio",
+          color: "primary",
+          label: "Contato",
+        }}
+        sticky
+      />
       <Header />
       <Card
         sx={{
