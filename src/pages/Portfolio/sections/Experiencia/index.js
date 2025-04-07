@@ -23,7 +23,7 @@ export default function Experiencia() {
           <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">
             <Grid item xs={12} md={6} lg={12}>
               <DefaultReviewCard
-                color="primary"
+                color="secondary"
                 name="Estagiária em Desenvolvimento Web"
                 where="Ministério Público do Rio de Janeiro"
                 date="Julho 2024 - o momento"

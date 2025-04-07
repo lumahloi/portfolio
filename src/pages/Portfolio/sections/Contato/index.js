@@ -3,7 +3,9 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
-import bgImage from "assets/images/bg-cats.gif";
+import bgContact from "assets/images/bg-contact.avif";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Contato() {
   return (
@@ -17,16 +19,23 @@ export default function Contato() {
           sx={{ overflow: "hidden" }}
         >
           <MKBox
-            component="bgImage"
-            src={bgImage}
-            alt="pattern-lines"
             position="absolute"
             top={0}
             left={0}
             width="100%"
+            height="100%"
             zIndex={1}
-            opacity={0.2}
+            sx={{
+              backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
+                `${linearGradient(
+                  rgba(gradients.dark.main, 0.5),
+                  rgba(gradients.dark.state, 0.5)
+                )}, url(${bgContact})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           />
+
           <Container sx={{ position: "relative", zIndex: 2, py: 12 }}>
             <Grid
               container
@@ -46,32 +55,23 @@ export default function Contato() {
               <Grid item>
                 <MKSocialButton
                   component="a"
-                  href="https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23mui5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-kit-react"
+                  href="https://github.com/lumahloi"
                   target="_blank"
-                  color="twitter"
+                  color="github"
                   sx={{ mr: 1 }}
                 >
                   <i className="fab fa-twitter" />
-                  &nbsp;Tweet
+                  <GitHubIcon /> &nbsp; GitHub
                 </MKSocialButton>
                 <MKSocialButton
                   component="a"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react"
+                  href="https://www.linkedin.com/in/lumah-pereira/"
                   target="_blank"
-                  color="facebook"
+                  color="linkedin"
                   sx={{ mr: 1 }}
                 >
                   <i className="fab fa-facebook" />
-                  &nbsp;Share
-                </MKSocialButton>
-                <MKSocialButton
-                  component="a"
-                  href="https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/material-kit-react"
-                  target="_blank"
-                  color="pinterest"
-                >
-                  <i className="fab fa-pinterest" />
-                  &nbsp;Pin it
+                  <LinkedInIcon /> &nbsp; LinkedIn
                 </MKSocialButton>
               </Grid>
             </Grid>

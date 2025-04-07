@@ -45,7 +45,7 @@ export default function Header() {
               </MKTypography>
               <Stack direction="row" spacing={1} mt={4}>
                 <MKButton
-                  color="white"
+                  color="primary"
                   onClick={() => {
                     const contato = document.getElementById("contato");
                     if (contato) {
