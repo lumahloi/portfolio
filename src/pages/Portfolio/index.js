@@ -13,8 +13,6 @@ import Projetos from "pages/Portfolio/sections/Projetos";
 import Experiencia from "pages/Portfolio/sections/Experiencia";
 import Contato from "pages/Portfolio/sections/Contato";
 
-// import routes from "routes";
-
 import { useRef } from "react";
 
 function Portfolio() {
@@ -48,17 +46,7 @@ function Portfolio() {
 
   return (
     <>
-      <DefaultNavbar
-        brand="Lumah Pereira"
-        routes={navbarRoutes}
-        // action={{
-        //   type: "internal",
-        //   route: "src/pages/Portfolio",
-        //   color: "primary",
-        //   label: "Contato",
-        // }}
-        sticky
-      />
+      <DefaultNavbar brand="Lumah Pereira" routes={navbarRoutes} sticky />
       <Header />
       <Card
         sx={{
