@@ -92,21 +92,21 @@ function TransparentBlogCard({ image, title, description, tags = [], github }) {
                 size="small"
                 sx={{
                   marginBottom: 1,
-                  backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.7)`, // Adiciona transparência 70%
-                  color: "white !important", // Garante texto branco
-                  backdropFilter: "blur(6px)", // Efeito de vidro fosco
-                  border: "1px solid rgba(255, 255, 255, 0.2)", // Borda sutil
+                  backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.7)`,
+                  color: "white !important",
+                  backdropFilter: "blur(6px)",
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
                   "& .MuiChip-label": {
-                    color: "white", // Texto branco
-                    fontWeight: 500, // Peso da fonte
+                    color: "white",
+                    fontWeight: 500,
                   },
                   "& .MuiChip-icon": {
                     color: "white",
                     marginLeft: "4px",
-                    opacity: 0.9, // Opacidade do ícone
+                    opacity: 0.9,
                   },
                   "&:hover": {
-                    backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.9)`, // Efeito hover
+                    backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.9)`,
                   },
                 }}
               />

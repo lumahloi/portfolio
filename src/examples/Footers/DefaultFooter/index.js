@@ -1,14 +1,7 @@
-// react-router-dom components
 import { Link } from "react-router-dom";
-
-// prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
-
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
-// Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -70,7 +63,7 @@ function DefaultFooter({ content }) {
                           cursor: "pointer",
                           color: "inherit",
                           fontFamily: "inherit",
-                          fontSize: "0.9rem", // ajusta aqui conforme desejar
+                          fontSize: "0.9rem",
                         }}
                       >
                         {name}
