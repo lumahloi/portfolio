@@ -24,7 +24,7 @@ export default function Experiencia() {
             <Grid item xs={12} md={6} lg={12}>
               <DefaultReviewCard
                 color="secondary"
-                name="Estagiária em Desenvolvimento Web"
+                name="Estagiária em Desenvolvimento FullStack"
                 where="Ministério Público do Rio de Janeiro"
                 date="Julho 2024 - o momento"
                 review={`Fui responsável por contribuições significativas que impactaram diretamente a eficiência e performance dos projetos. Atuei no desenvolvimento e otimização de sistemas web utilizando React e Django, sempre com foco em melhorar a qualidade do código e a experiência do usuário.

@@ -50,10 +50,8 @@ export default function Sobre() {
                     <MKTypography variant="h3" mb={3}>
                       Sobre mim
                     </MKTypography>{" "}
-                    {/* Adicionei mb aqui */}
                     <MKTypography variant="body1" mb={3}>
                       {" "}
-                      {/* mb=3 equivale a 24px */}
                       Uso da tecnologia para superar obstáculos e automatizar tarefas tanto da minha
                       vida pessoal quanto dos que observo ao meu redor. Para tanto, sou formada em
                       Análise e Desenvolvimento de Sistemas e coleciono algumas certificações na
@@ -61,15 +59,13 @@ export default function Sobre() {
                     </MKTypography>
                     <MKTypography variant="body1" mb={3}>
                       {" "}
-                      {/* mb=3 mantém consistência */}
                       Ainda na tecnologia, sou fascinada por testes de intrusão (o tal Red Team) e
                       desenvolvimento de jogos.
                     </MKTypography>
                     <MKTypography variant="body1">
                       {" "}
-                      {/* Sem mb no último parágrafo */}
                       Minhas principais soft skills que humildemente destaco são adaptação,
-                      honestidade, organização, resiliência e iniciativa própria. Os meus hobbies
+                      rápida aprendizagem, organização, resiliência e iniciativa própria. Os meus hobbies
                       incluem design gráfico, crochet, vídeo-games e crítica do audiovisual.
                     </MKTypography>
                   </MKBox>

@@ -53,7 +53,16 @@ const projetos = [
     image: imgSisu,
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/lumahloi/simulador-sisu",
-  },
+  }
+  // {
+  //   id: X,
+  //   title: "NOME",
+  //   description:
+  //     "AAAAAAAAAAAAAAAAAA",
+  //   image: AQUI,
+  //   tags: ["", ""],
+  //   github: "AAAAAAAAAAAA",
+  // },
 ];
 
 export default function Projetos() {
