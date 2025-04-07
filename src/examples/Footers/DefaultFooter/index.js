@@ -1,18 +1,3 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-router-dom components
 import { Link } from "react-router-dom";
 
@@ -36,9 +21,6 @@ function DefaultFooter({ content }) {
         <Grid container spacing={3}>
           <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
             <MKBox>
-              <Link to={brand.route}>
-                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" mb={2} />
-              </Link>
               <MKTypography variant="h6">{brand.name}</MKTypography>
             </MKBox>
             <MKBox display="flex" alignItems="center" mt={3}>
@@ -59,6 +41,7 @@ function DefaultFooter({ content }) {
               ))}
             </MKBox>
           </Grid>
+
           {menus.map(({ name: title, items }) => (
             <Grid key={title} item xs={6} md={2} sx={{ mb: 3 }}>
               <MKTypography
@@ -71,9 +54,28 @@ function DefaultFooter({ content }) {
                 {title}
               </MKTypography>
               <MKBox component="ul" p={0} m={0} sx={{ listStyle: "none" }}>
-                {items.map(({ name, route, href }) => (
+                {items.map(({ name, route, href, onClick }) => (
                   <MKBox key={name} component="li" p={0} m={0} lineHeight={1.25}>
-                    {href ? (
+                    {onClick ? (
+                      <MKTypography
+                        component="button"
+                        onClick={onClick}
+                        variant="button"
+                        fontWeight="regular"
+                        textTransform="capitalize"
+                        sx={{
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                          cursor: "pointer",
+                          color: "inherit",
+                          fontFamily: "inherit",
+                          fontSize: "0.9rem", // ajusta aqui conforme desejar
+                        }}
+                      >
+                        {name}
+                      </MKTypography>
+                    ) : href ? (
                       <MKTypography
                         component="a"
                         href={href}
@@ -101,6 +103,7 @@ function DefaultFooter({ content }) {
               </MKBox>
             </Grid>
           ))}
+
           <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
             {copyright}
           </Grid>
@@ -110,7 +113,6 @@ function DefaultFooter({ content }) {
   );
 }
 
-// Typechecking props for the DefaultFooter
 DefaultFooter.propTypes = {
   content: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object, PropTypes.array])).isRequired,
 };

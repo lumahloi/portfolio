@@ -1,17 +1,20 @@
 import Card from "@mui/material/Card";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
 
 import DefaultFooter from "examples/Footers/DefaultFooter";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-
-import footerRoutes from "footer.routes";
 
 import Header from "pages/Portfolio/sections/Header";
 import Sobre from "pages/Portfolio/sections/Sobre";
 import Projetos from "pages/Portfolio/sections/Projetos";
 import Experiencia from "pages/Portfolio/sections/Experiencia";
 import Contato from "pages/Portfolio/sections/Contato";
+
+const date = new Date().getFullYear();
 
 import { useRef } from "react";
 
@@ -35,7 +38,7 @@ function Portfolio() {
       onClick: () => scrollTo(projetosRef),
     },
     {
-      name: "Experiência",
+      name: "Experiências",
       onClick: () => scrollTo(experienciaRef),
     },
     {
@@ -43,6 +46,68 @@ function Portfolio() {
       onClick: () => scrollTo(contatoRef),
     },
   ];
+
+  const footerRoutes = {
+    brand: {
+      name: "Lumah Pereira",
+    },
+    socials: [
+      {
+        icon: <GitHubIcon />,
+        link: "https://github.com/lumahloi",
+      },
+      {
+        icon: <LinkedInIcon />,
+        link: "https://www.linkedin.com/in/lumah-pereira/",
+      },
+    ],
+    menus: [
+      {
+        name: "Sobre",
+        items: [{ name: "Quem sou", onClick: () => scrollTo(sobreRef) }],
+      },
+      {
+        name: "Projetos",
+        items: [{ name: "Meus Projetos", onClick: () => scrollTo(projetosRef) }],
+      },
+      {
+        name: "Experiências",
+        items: [{ name: "Experiência Profissional", onClick: () => scrollTo(experienciaRef) }],
+      },
+      {
+        name: "Contato",
+        items: [{ name: "Fale comigo", onClick: () => scrollTo(contatoRef) }],
+      },
+    ],
+
+    copyright: (
+      <MKTypography variant="button" fontWeight="regular">
+        Todos os direitos reservados. &copy; {date} Portfolio por{" "}
+        <MKTypography
+          component="a"
+          href="https://github.com/lumahloi"
+          target="_blank"
+          rel="noreferrer"
+          variant="button"
+          fontWeight="regular"
+        >
+          Lumah Pereira
+        </MKTypography>
+        . Copyright &copy; {date} Material Kit por{" "}
+        <MKTypography
+          component="a"
+          href="https://www.creative-tim.com"
+          target="_blank"
+          rel="noreferrer"
+          variant="button"
+          fontWeight="regular"
+        >
+          Creative Tim
+        </MKTypography>
+        .
+      </MKTypography>
+    ),
+  };
 
   return (
     <>
