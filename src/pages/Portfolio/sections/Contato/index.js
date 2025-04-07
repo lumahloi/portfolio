@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
-import bgContact from "assets/images/bg-contact.avif";
+import bgContact from "assets/images/bg-contact.jpg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
