@@ -13,20 +13,50 @@ import Projetos from "pages/Portfolio/sections/Projetos";
 import Experiencia from "pages/Portfolio/sections/Experiencia";
 import Contato from "pages/Portfolio/sections/Contato";
 
-import routes from "routes";
+// import routes from "routes";
+
+import { useRef } from "react";
 
 function Portfolio() {
+  const sobreRef = useRef(null);
+  const projetosRef = useRef(null);
+  const experienciaRef = useRef(null);
+  const contatoRef = useRef(null);
+
+  const scrollTo = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const navbarRoutes = [
+    {
+      name: "Sobre",
+      onClick: () => scrollTo(sobreRef),
+    },
+    {
+      name: "Projetos",
+      onClick: () => scrollTo(projetosRef),
+    },
+    {
+      name: "Experiência",
+      onClick: () => scrollTo(experienciaRef),
+    },
+    {
+      name: "Contato",
+      onClick: () => scrollTo(contatoRef),
+    },
+  ];
+
   return (
     <>
       <DefaultNavbar
         brand="Lumah Pereira"
-        routes={routes}
-        action={{
-          type: "internal",
-          route: "src/pages/Portfolio",
-          color: "primary",
-          label: "Contato",
-        }}
+        routes={navbarRoutes}
+        // action={{
+        //   type: "internal",
+        //   route: "src/pages/Portfolio",
+        //   color: "primary",
+        //   label: "Contato",
+        // }}
         sticky
       />
       <Header />
@@ -41,13 +71,18 @@ function Portfolio() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Sobre />
-
-        <Projetos />
-
-        <Experiencia />
-
-        <Contato />
+        <div ref={sobreRef}>
+          <Sobre />
+        </div>
+        <div ref={projetosRef}>
+          <Projetos />
+        </div>
+        <div ref={experienciaRef}>
+          <Experiencia />
+        </div>
+        <div ref={contatoRef}>
+          <Contato />
+        </div>
       </Card>
 
       <MKBox pt={6} px={1} mt={6}>
