@@ -4,36 +4,46 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import Link from "@mui/material/Link";
 
-function TransparentBlogCard({ image, title, description, tags = [] }) {
+function TransparentBlogCard({ image, title, description, tags = [], github }) {
   const imageTemplate = (
-    <MKBox position="relative" borderRadius="lg">
-      <MKBox
-        component="img"
-        src={image}
-        alt={title}
-        borderRadius="lg"
-        shadow="md"
-        width="100%"
-        position="relative"
-        zIndex={1}
-      />
-      <MKBox
-        borderRadius="lg"
-        shadow="md"
-        width="100%"
-        height="100%"
-        position="absolute"
-        left={0}
-        top={0}
-        sx={{
-          backgroundImage: `url(${image})`,
-          transform: "scale(0.94)",
-          filter: "blur(12px)",
-          backgroundSize: "cover",
-        }}
-      />
-    </MKBox>
+    <Link href={github} target="_blank" rel="noopener noreferrer" sx={{ display: "block" }}>
+      <MKBox position="relative" borderRadius="lg">
+        <MKBox
+          component="img"
+          src={image}
+          alt={title}
+          borderRadius="lg"
+          shadow="md"
+          width="100%"
+          position="relative"
+          zIndex={1}
+          sx={{
+            cursor: "pointer",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "scale(1.02)",
+            },
+          }}
+        />
+        <MKBox
+          borderRadius="lg"
+          shadow="md"
+          width="100%"
+          height="100%"
+          position="absolute"
+          left={0}
+          top={0}
+          sx={{
+            backgroundImage: `url(${image})`,
+            transform: "scale(0.94)",
+            filter: "blur(12px)",
+            backgroundSize: "cover",
+          }}
+        />
+      </MKBox>
+    </Link>
   );
 
   return (
@@ -47,9 +57,27 @@ function TransparentBlogCard({ image, title, description, tags = [] }) {
       {imageTemplate}
 
       <MKBox pt={2} pb={3}>
-        <MKTypography variant="h5" gutterBottom>
-          {title}
-        </MKTypography>
+        <Link
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          color="inherit"
+          underline="none"
+        >
+          <MKTypography
+            variant="h5"
+            gutterBottom
+            sx={{
+              cursor: "pointer",
+              transition: "color 0.3s ease",
+              "&:hover": {
+                color: "primary.main",
+              },
+            }}
+          >
+            {title}
+          </MKTypography>
+        </Link>
 
         <MKTypography variant="body2" component="p" color="text" mb={3}>
           {description}
@@ -122,6 +150,7 @@ TransparentBlogCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
+  github: PropTypes.string.isRequired,
 };
 
 export default TransparentBlogCard;

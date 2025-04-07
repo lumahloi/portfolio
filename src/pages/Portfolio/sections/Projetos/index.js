@@ -74,6 +74,7 @@ export default function Projetos() {
                 title={projeto.title}
                 description={projeto.description}
                 tags={projeto.tags}
+                github={projeto.github}
               />
             </Grid>
           ))}
