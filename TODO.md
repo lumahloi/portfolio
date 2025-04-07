@@ -4,3 +4,7 @@ IMPORTANTE
 CAPRICHO
 - dark mode
 - filtro de projetos por tag
+
+SUGESTAO DO GEYSSON
+- email para contato
+- curriculo para download
