@@ -44,7 +44,17 @@ export default function Header() {
                 memoráveis
               </MKTypography>
               <Stack direction="row" spacing={1} mt={4}>
-                <MKButton color="white">Entre em contato</MKButton>
+                <MKButton
+                  color="white"
+                  onClick={() => {
+                    const contato = document.getElementById("contato");
+                    if (contato) {
+                      contato.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
+                  Entre em contato
+                </MKButton>
               </Stack>
             </Grid>
           </Container>

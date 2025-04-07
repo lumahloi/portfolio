@@ -68,7 +68,7 @@ function Portfolio() {
         <div ref={experienciaRef}>
           <Experiencia />
         </div>
-        <div ref={contatoRef}>
+        <div ref={contatoRef} id="contato">
           <Contato />
         </div>
       </Card>
