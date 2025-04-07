@@ -45,8 +45,8 @@ export default {
   },
 
   primary: {
-    main: "#e91e63",
-    focus: "#e91e63",
+    main: "#8a334c",
+    focus: "#8a334c",
   },
 
   secondary: {
@@ -80,7 +80,7 @@ export default {
   },
 
   dark: {
-    main: "#344767",
+    main: "#1c130f",
     focus: "#2c3c58",
   },
 
@@ -103,8 +103,8 @@ export default {
     },
 
     secondary: {
-      main: "#747b8a",
-      state: "#495361",
+      main: "#8a334c",
+      state: "#8c1839",
     },
 
     info: {
