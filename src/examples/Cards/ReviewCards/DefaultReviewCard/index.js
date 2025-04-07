@@ -3,8 +3,8 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function DefaultReviewCard({ color, name, where, date, review}) {
-  const reviewWithBreaks = review.replace(/\n/g, '<br />');
+function DefaultReviewCard({ color, name, where, date, review }) {
+  const reviewWithBreaks = review.replace(/\n/g, "<br />");
 
   return (
     <MKBox
@@ -63,14 +63,13 @@ function DefaultReviewCard({ color, name, where, date, review}) {
             ml: -0.375,
           },
         }}
-      >
-      </MKTypography>
+      />
     </MKBox>
   );
 }
 
 DefaultReviewCard.defaultProps = {
-  color: "transparent"
+  color: "transparent",
 };
 
 DefaultReviewCard.propTypes = {

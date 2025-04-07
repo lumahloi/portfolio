@@ -79,7 +79,7 @@ function TransparentBlogCard({ image, title, description, tags = [] }) {
                   },
                   "&:hover": {
                     backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.9)`, // Efeito hover
-                  }
+                  },
                 }}
               />
             ))}
@@ -92,31 +92,28 @@ function TransparentBlogCard({ image, title, description, tags = [] }) {
 
 function getTagColor(tag) {
   const colorMap = {
-    "Flutterflow": "#4c3af0",
-    "React": "#61dbfb",
-    "JavaScript": "#f7e018",
-    "PHP": "#777bb3",
-    "Java": "#ec2025",
-    "Firebase": "#ffcb2b",
-    "MySQL": "#005d8a",
-    "Node": "#80be03",
-    "HTML": "#ff4b00",
-    "CSS": "#1572b6",
-    "Bootstrap": "#7708f7",
-    "Supabase": "#3ecf8e",
+    Flutterflow: "#4c3af0",
+    React: "#61dbfb",
+    JavaScript: "#f7e018",
+    PHP: "#777bb3",
+    Java: "#ec2025",
+    Firebase: "#ffcb2b",
+    MySQL: "#005d8a",
+    Node: "#80be03",
+    HTML: "#ff4b00",
+    CSS: "#1572b6",
+    Bootstrap: "#7708f7",
+    Supabase: "#3ecf8e",
   };
 
   return colorMap[tag] || "0B0D0E";
 }
 
 function hexToRgb(hex) {
-  hex = hex.replace('#', '');
-  
-  // Converte para RGB
+  hex = hex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
   const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
-  
   return `${r}, ${g}, ${b}`;
 }
 
