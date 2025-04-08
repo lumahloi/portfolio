@@ -64,8 +64,8 @@ export default function Sobre() {
                     </MKTypography>
                     <MKTypography variant="body1">
                       {" "}
-                      Minhas principais soft skills que humildemente destaco são adaptação,
-                      rápida aprendizagem, organização, resiliência e iniciativa própria. Os meus hobbies
+                      Minhas principais soft skills que humildemente destaco são adaptação, rápida
+                      aprendizagem, organização, resiliência e iniciativa própria. Os meus hobbies
                       incluem design gráfico, crochet, vídeo-games e crítica do audiovisual.
                     </MKTypography>
                   </MKBox>
