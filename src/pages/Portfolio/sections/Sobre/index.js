@@ -1,11 +1,19 @@
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import MKSocialButton from "components/MKSocialButton";
+import MKButton from "components/MKButton";
 
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
+// import Stack from "@mui/material/Stack";
+import DownloadIcon from "@mui/icons-material/Download";
 
 import profileImage from "assets/images/profile-img.png";
+import cv from "assets/cv/curriculo.pdf";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Sobre() {
   return (
@@ -50,24 +58,122 @@ export default function Sobre() {
                     <MKTypography variant="h3" mb={3}>
                       Sobre mim
                     </MKTypography>{" "}
-                    <MKTypography variant="body1" mb={3}>
-                      {" "}
-                      Uso da tecnologia para superar obstáculos e automatizar tarefas tanto da minha
-                      vida pessoal quanto dos que observo ao meu redor. Para tanto, sou formada em
-                      Análise e Desenvolvimento de Sistemas e coleciono algumas certificações na
-                      área.
-                    </MKTypography>
-                    <MKTypography variant="body1" mb={3}>
-                      {" "}
-                      Ainda na tecnologia, sou fascinada por testes de intrusão (o tal Red Team) e
-                      desenvolvimento de jogos.
-                    </MKTypography>
-                    <MKTypography variant="body1">
-                      {" "}
-                      Minhas principais soft skills que humildemente destaco são adaptação, rápida
-                      aprendizagem, organização, resiliência e iniciativa própria. Os meus hobbies
-                      incluem design gráfico, crochet, vídeo-games e crítica do audiovisual.
-                    </MKTypography>
+                    <Grid container>
+                      <MKTypography variant="body1" mb={3}>
+                        {" "}
+                        Uso da tecnologia para superar obstáculos e automatizar tarefas tanto da
+                        minha vida pessoal quanto dos que observo ao meu redor. Para tanto, sou
+                        formada em Análise e Desenvolvimento de Sistemas e coleciono algumas
+                        certificações na área.
+                      </MKTypography>
+                      <MKTypography variant="body1" mb={3}>
+                        {" "}
+                        Ainda na tecnologia, sou fascinada por testes de intrusão (o tal Red Team) e
+                        desenvolvimento de jogos.
+                      </MKTypography>
+                      <MKTypography variant="body1" mb={3}>
+                        {" "}
+                        Minhas principais soft skills que humildemente destaco são adaptação, rápida
+                        aprendizagem, organização, resiliência e iniciativa própria. Os meus hobbies
+                        incluem design gráfico, crochet, vídeo-games e crítica do audiovisual.
+                      </MKTypography>
+                      <Grid
+                        container
+                        spacing={1}
+                        alignItems="center"
+                        justifyContent="center"
+                        sx={{ width: "100%" }}
+                      >
+                        <Grid item xs={4} sx={{ display: "flex", height: "100%" }}>
+                          <MKSocialButton
+                            component="a"
+                            href="https://github.com/lumahloi"
+                            target="_blank"
+                            color="github"
+                            fullWidth
+                            sx={{
+                              height: "100%",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              py: 1.5,
+                              "& .MuiButton-startIcon": {
+                                // Estilo específico para o ícone
+                                margin: 0,
+                                "& > *:nth-of-type(1)": {
+                                  // Ajuste para os ícones
+                                  fontSize: "1rem",
+                                  marginBottom: 0,
+                                },
+                              },
+                            }}
+                            startIcon={
+                              <>
+                                <i className="fab fa-github" />
+                                <GitHubIcon sx={{ fontSize: "1rem", ml: 0.5 }} />
+                              </>
+                            }
+                          >
+                            <span style={{ marginLeft: "8px" }}>GitHub</span>
+                          </MKSocialButton>
+                        </Grid>
+
+                        {/* Botão LinkedIn - Versão Corrigida */}
+                        <Grid item xs={4} sx={{ display: "flex", height: "100%" }}>
+                          <MKSocialButton
+                            component="a"
+                            href="https://www.linkedin.com/in/lumah-pereira/"
+                            target="_blank"
+                            color="linkedin"
+                            fullWidth
+                            sx={{
+                              height: "100%",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              py: 1.5,
+                              "& .MuiButton-startIcon": {
+                                margin: 0,
+                                "& > *:nth-of-type(1)": {
+                                  fontSize: "1rem",
+                                  marginBottom: 0,
+                                },
+                              },
+                            }}
+                            startIcon={
+                              <>
+                                <i className="fab fa-linkedin" />
+                                <LinkedInIcon sx={{ fontSize: "1rem", ml: 0.5 }} />
+                              </>
+                            }
+                          >
+                            <span style={{ marginLeft: "8px" }}>LinkedIn</span>
+                          </MKSocialButton>
+                        </Grid>
+
+                        {/* Botão Currículo - Mantido perfeito */}
+                        <Grid item xs={4} sx={{ display: "flex", height: "100%" }}>
+                          <MKButton
+                            component="a"
+                            href={cv}
+                            download="curriculo.pdf"
+                            color="primary"
+                            fullWidth
+                            sx={{
+                              height: "100%",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              py: 1.5,
+                              textDecoration: "none",
+                            }}
+                            startIcon={<DownloadIcon />}
+                          >
+                            <span style={{ marginLeft: "8px" }}>Currículo</span>
+                          </MKButton>
+                        </Grid>
+                      </Grid>
+                    </Grid>
                   </MKBox>
                 </Grid>
               </Grid>

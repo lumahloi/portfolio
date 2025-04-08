@@ -1,10 +1,14 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
+import DownloadIcon from "@mui/icons-material/Download";
+
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import MKBox from "components/MKBox";
+
 import bgOffice from "assets/images/bg-office.gif";
+import cv from "assets/cv/curriculo.pdf";
 
 export default function Header() {
   return (
@@ -43,7 +47,7 @@ export default function Header() {
                 Desenvolvedora fullstack focada em soluções eficientes e experiências de usuário
                 memoráveis
               </MKTypography>
-              <Stack direction="row" spacing={1} mt={4}>
+              <Stack direction="row" spacing={2} mt={4}>
                 <MKButton
                   color="primary"
                   onClick={() => {
@@ -55,6 +59,12 @@ export default function Header() {
                 >
                   Entre em contato
                 </MKButton>
+                <a href={cv} download="curriculo.pdf">
+                  <MKButton>
+                    <DownloadIcon />
+                    <Stack ml={1}>Currículo</Stack>
+                  </MKButton>
+                </a>
               </Stack>
             </Grid>
           </Container>

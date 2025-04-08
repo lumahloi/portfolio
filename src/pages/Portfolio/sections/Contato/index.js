@@ -60,7 +60,7 @@ export default function Contato() {
                   color="github"
                   sx={{ mr: 1 }}
                 >
-                  <i className="fab fa-twitter" />
+                  <i className="fab fa-github" />
                   <GitHubIcon /> &nbsp; GitHub
                 </MKSocialButton>
                 <MKSocialButton
@@ -70,7 +70,7 @@ export default function Contato() {
                   color="linkedin"
                   sx={{ mr: 1 }}
                 >
-                  <i className="fab fa-facebook" />
+                  <i className="fab fa-linkedin" />
                   <LinkedInIcon /> &nbsp; LinkedIn
                 </MKSocialButton>
               </Grid>
