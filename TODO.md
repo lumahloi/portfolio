@@ -7,4 +7,3 @@ CAPRICHO
 
 SUGESTAO DO GEYSSON
 - email para contato
-- curriculo para download
