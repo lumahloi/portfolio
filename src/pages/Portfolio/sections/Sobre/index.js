@@ -6,8 +6,8 @@ import MKButton from "components/MKButton";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
-// import Stack from "@mui/material/Stack";
 import DownloadIcon from "@mui/icons-material/Download";
+import MailIcon from "@mui/icons-material/Mail";
 
 import profileImage from "assets/images/profile-img.png";
 import cv from "assets/cv/curriculo.pdf";
@@ -83,8 +83,9 @@ export default function Sobre() {
                         alignItems="center"
                         justifyContent="center"
                         sx={{ width: "100%" }}
+                        mt={3}
                       >
-                        <Grid item xs={4} sx={{ display: "flex", height: "100%" }}>
+                        <Grid item xs={12} sm="auto">
                           <MKSocialButton
                             component="a"
                             href="https://github.com/lumahloi"
@@ -92,16 +93,13 @@ export default function Sobre() {
                             color="github"
                             fullWidth
                             sx={{
-                              height: "100%",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
                               py: 1.5,
                               "& .MuiButton-startIcon": {
-                                // Estilo específico para o ícone
                                 margin: 0,
                                 "& > *:nth-of-type(1)": {
-                                  // Ajuste para os ícones
                                   fontSize: "1rem",
                                   marginBottom: 0,
                                 },
@@ -118,8 +116,7 @@ export default function Sobre() {
                           </MKSocialButton>
                         </Grid>
 
-                        {/* Botão LinkedIn - Versão Corrigida */}
-                        <Grid item xs={4} sx={{ display: "flex", height: "100%" }}>
+                        <Grid item xs={12} sm="auto">
                           <MKSocialButton
                             component="a"
                             href="https://www.linkedin.com/in/lumah-pereira/"
@@ -127,7 +124,6 @@ export default function Sobre() {
                             color="linkedin"
                             fullWidth
                             sx={{
-                              height: "100%",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
@@ -151,8 +147,7 @@ export default function Sobre() {
                           </MKSocialButton>
                         </Grid>
 
-                        {/* Botão Currículo - Mantido perfeito */}
-                        <Grid item xs={4} sx={{ display: "flex", height: "100%" }}>
+                        <Grid item xs={12} sm="auto">
                           <MKButton
                             component="a"
                             href={cv}
@@ -160,7 +155,6 @@ export default function Sobre() {
                             color="primary"
                             fullWidth
                             sx={{
-                              height: "100%",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
@@ -170,6 +164,25 @@ export default function Sobre() {
                             startIcon={<DownloadIcon />}
                           >
                             <span style={{ marginLeft: "8px" }}>Currículo</span>
+                          </MKButton>
+                        </Grid>
+
+                        <Grid item xs={12} sm="auto">
+                          <MKButton
+                            component="a"
+                            href="mailto:lumah.pereira26@gmail.com"
+                            color="secondary"
+                            fullWidth
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              py: 1.5,
+                              textDecoration: "none",
+                            }}
+                            startIcon={<MailIcon />}
+                          >
+                            <span style={{ marginLeft: "8px" }}>E-mail</span>
                           </MKButton>
                         </Grid>
                       </Grid>

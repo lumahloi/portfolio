@@ -1,6 +1,7 @@
 import Card from "@mui/material/Card";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MailIcon from "@mui/icons-material/Mail";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -59,6 +60,10 @@ function Portfolio() {
       {
         icon: <LinkedInIcon />,
         link: "https://www.linkedin.com/in/lumah-pereira/",
+      },
+      {
+        icon: <MailIcon />,
+        link: "mailto:lumah.pereira26@gmail.com",
       },
     ],
     menus: [

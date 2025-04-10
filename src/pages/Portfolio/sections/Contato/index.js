@@ -1,11 +1,16 @@
-import MKBox from "components/MKBox";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import MKTypography from "components/MKTypography";
-import MKSocialButton from "components/MKSocialButton";
-import bgContact from "assets/images/bg-contact.jpg";
+import MailIcon from "@mui/icons-material/Mail";
+
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
+import MKSocialButton from "components/MKSocialButton";
+import MKButton from "components/MKButton";
+
+import bgContact from "assets/images/bg-contact.jpg";
 
 export default function Contato() {
   return (
@@ -52,27 +57,41 @@ export default function Contato() {
               <MKTypography variant="body2" color="white" mb={3} mt={2}>
                 Entre em contato através das formas listadas abaixo e vamos colaborar em projetos.
               </MKTypography>
-              <Grid item>
-                <MKSocialButton
-                  component="a"
-                  href="https://github.com/lumahloi"
-                  target="_blank"
-                  color="github"
-                  sx={{ mr: 1 }}
-                >
-                  <i className="fab fa-github" />
-                  <GitHubIcon /> &nbsp; GitHub
-                </MKSocialButton>
-                <MKSocialButton
-                  component="a"
-                  href="https://www.linkedin.com/in/lumah-pereira/"
-                  target="_blank"
-                  color="linkedin"
-                  sx={{ mr: 1 }}
-                >
-                  <i className="fab fa-linkedin" />
-                  <LinkedInIcon /> &nbsp; LinkedIn
-                </MKSocialButton>
+              <Grid container spacing={1} justifyContent="center">
+                <Grid item xs={12} sm="auto">
+                  <MKSocialButton
+                    component="a"
+                    href="https://github.com/lumahloi"
+                    target="_blank"
+                    color="github"
+                    fullWidth
+                  >
+                    <i className="fab fa-github" />
+                    <GitHubIcon /> &nbsp; GitHub
+                  </MKSocialButton>
+                </Grid>
+                <Grid item xs={12} sm="auto">
+                  <MKSocialButton
+                    component="a"
+                    href="https://www.linkedin.com/in/lumah-pereira/"
+                    target="_blank"
+                    color="linkedin"
+                    fullWidth
+                  >
+                    <i className="fab fa-linkedin" />
+                    <LinkedInIcon /> &nbsp; LinkedIn
+                  </MKSocialButton>
+                </Grid>
+                <Grid item xs={12} sm="auto">
+                  <MKButton
+                    component="a"
+                    href="mailto:lumah.pereira26@gmail.com"
+                    color="secondary"
+                    fullWidth
+                  >
+                    <i className="fas fa-envelope" /> <MailIcon /> &nbsp; E-mail
+                  </MKButton>
+                </Grid>
               </Grid>
             </Grid>
           </Container>
