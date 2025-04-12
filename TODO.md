@@ -1,6 +1,4 @@
-IMPORTANTE
-- botão de traduzir para inglês
-
 CAPRICHO
 - dark mode
 - filtro de projetos por tag
+- evidenciar o botao de trocar idioma
