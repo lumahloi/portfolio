@@ -5,9 +5,18 @@ import MKTypography from "components/MKTypography";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
 import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
+import { experiencias as experienciasPT } from "../../../../data/experiencias.pt";
+import { experiencias as experienciasEN } from "../../../../data/experiencias.en";
 
 export default function Experiencia() {
   const { t } = useTranslation();
+  const { i18n } = useTranslation();
+
+  const experiencias = useMemo(() => {
+    return i18n.language === "en" ? experienciasEN : experienciasPT;
+  }, [i18n.language]);
+
   return (
     <>
       <MKBox component="section" py={12}>
@@ -24,34 +33,17 @@ export default function Experiencia() {
           </Grid>
 
           <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">
-            <Grid item xs={12} md={6} lg={12}>
-              <DefaultReviewCard
-                color="secondary"
-                name="Estagiária em Desenvolvimento FullStack"
-                where="Ministério Público do Rio de Janeiro"
-                date="Julho 2024 - o momento"
-                review={`Fui responsável por contribuições significativas que impactaram diretamente a eficiência e performance dos projetos. Atuei no desenvolvimento e otimização de sistemas web utilizando React e Django, sempre com foco em melhorar a qualidade do código e a experiência do usuário.
-                                
-                                - Otimização na velocidade de carregamento de aplicações web através da refatoração de componentes React;\n
-                                - Redução no tempo de processamento de operações críticas após a reestruturação de algoritmos em Python e melhorias nas queries do banco de dados;\n
-                                - Implementação de boas práticas de código que diminuíram os bugs reportados em produção, aumentando a estabilidade dos sistemas;\n
-                                - Colaboração ativa no Scrum, participando do planejamento de sprints e ajudando a equipe a entregar features mais rápido devido a uma melhor organização de tarefas.`}
-              />
-            </Grid>
-            {/* <Grid item xs={12} md={6} lg={12}>
-                            <DefaultReviewCard
-                                color="transparent"
-                                name="Estagiária em Desenvolvimento Web"
-                                where="Ministério Público do Rio de Janeiro"
-                                date="Julho 2024 - o momento"
-                                review={`Fui responsável por contribuições significativas que impactaram diretamente a eficiência e performance dos projetos. Atuei no desenvolvimento e otimização de sistemas web utilizando React e Django, sempre com foco em melhorar a qualidade do código e a experiência do usuário.
-                                
-                                - Otimização na velocidade de carregamento de aplicações web através da refatoração de componentes React;\n
-                                - Redução no tempo de processamento de operações críticas após a reestruturação de algoritmos em Python e melhorias nas queries do banco de dados;\n
-                                - Implementação de boas práticas de código que diminuíram os bugs reportados em produção, aumentando a estabilidade dos sistemas;\n
-                                - Colaboração ativa no Scrum, participando do planejamento de sprints e ajudando a equipe a entregar features mais rápido devido a uma melhor organização de tarefas.`}
-                            />
-                        </Grid> */}
+            {experiencias.map((experiencia) => (
+              <Grid item xs={12} md={6} lg={12} key={experiencia.id}>
+                <DefaultReviewCard
+                  color={experiencia.color}
+                  name={experiencia.name}
+                  where={experiencia.where}
+                  date={experiencia.date}
+                  review={experiencia.review}
+                />
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </MKBox>

@@ -43,6 +43,8 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
+import { useTranslation } from "react-i18next";
+
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
@@ -53,6 +55,8 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+
+  const { i18n } = useTranslation();
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
@@ -490,7 +494,55 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
+          {/* <MKBox ml={{ xs: "auto", lg: 0 }}>
+            {action &&
+              (action.type === "internal" ? (
+                <MKButton
+                  component={Link}
+                  to={action.route}
+                  variant={
+                    action.color === "white" || action.color === "default"
+                      ? "contained"
+                      : "gradient"
+                  }
+                  color={action.color ? action.color : "info"}
+                  size="small"
+                >
+                  {action.label}
+                </MKButton>
+              ) : (
+                <MKButton
+                  component="a"
+                  href={action.route}
+                  target="_blank"
+                  rel="noreferrer"
+                  variant={
+                    action.color === "white" || action.color === "default"
+                      ? "contained"
+                      : "gradient"
+                  }
+                  color={action.color ? action.color : "info"}
+                  size="small"
+                >
+                  {action.label}
+                </MKButton>
+              ))}
+          </MKBox> */}
+          <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center" gap={1}>
+            {/* Botão de troca de idioma */}
+            <MKButton
+              onClick={() => {
+                const newLang = i18n.language === "pt" ? "en" : "pt";
+                i18n.changeLanguage(newLang);
+              }}
+              variant="text"
+              size="small"
+              color={light ? "white" : "dark"}
+            >
+              {i18n.language === "pt" ? "EN" : "PT"}
+            </MKButton>
+
+            {/* Botão de ação se existir */}
             {action &&
               (action.type === "internal" ? (
                 <MKButton
@@ -524,6 +576,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                 </MKButton>
               ))}
           </MKBox>
+
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
             lineHeight={0}
