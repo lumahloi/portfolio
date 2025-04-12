@@ -15,7 +15,11 @@ import cv from "assets/cv/curriculo.pdf";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+import { useTranslation } from "react-i18next";
+
 export default function Sobre() {
+  const { t } = useTranslation();
+
   return (
     <>
       <MKBox component="section" py={12}>
@@ -56,26 +60,20 @@ export default function Sobre() {
                 <Grid item xs={12} md={12} lg={12}>
                   <MKBox mb={12} lg={12}>
                     <MKTypography variant="h3" mb={3}>
-                      Sobre mim
+                      {t("about-title")}
                     </MKTypography>{" "}
                     <Grid container>
                       <MKTypography variant="body1" mb={3}>
                         {" "}
-                        Uso da tecnologia para superar obstáculos e automatizar tarefas tanto da
-                        minha vida pessoal quanto dos que observo ao meu redor. Para tanto, sou
-                        formada em Análise e Desenvolvimento de Sistemas e coleciono algumas
-                        certificações na área.
+                        {t("about-txt-1")}
                       </MKTypography>
                       <MKTypography variant="body1" mb={3}>
                         {" "}
-                        Ainda na tecnologia, sou fascinada por testes de intrusão (o tal Red Team) e
-                        desenvolvimento de jogos.
+                        {t("about-txt-2")}
                       </MKTypography>
                       <MKTypography variant="body1" mb={3}>
                         {" "}
-                        Minhas principais soft skills que humildemente destaco são adaptação, rápida
-                        aprendizagem, organização, resiliência e iniciativa própria. Os meus hobbies
-                        incluem design gráfico, crochet, vídeo-games e crítica do audiovisual.
+                        {t("about-txt-3")}
                       </MKTypography>
                       <Grid
                         container
@@ -163,7 +161,7 @@ export default function Sobre() {
                             }}
                             startIcon={<DownloadIcon />}
                           >
-                            <span style={{ marginLeft: "8px" }}>Currículo</span>
+                            <span style={{ marginLeft: "8px" }}>{t("header-btn-2")}</span>
                           </MKButton>
                         </Grid>
 

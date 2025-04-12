@@ -10,7 +10,11 @@ import MKBox from "components/MKBox";
 import bgOffice from "assets/images/bg-office.gif";
 import cv from "assets/cv/curriculo.pdf";
 
+import { useTranslation } from "react-i18next";
+
 export default function Header() {
+  const { t } = useTranslation();
+
   return (
     <>
       <MKBox component="header" position="relative">
@@ -41,11 +45,10 @@ export default function Header() {
                 Lumah Pereira
               </MKTypography>
               <MKTypography variant="h2" color="white" opacity={0.8} mb={2} textAlign="center">
-                Uso a tecnologia para fazer a diferença
+                {t("header-1")}
               </MKTypography>
               <MKTypography variant="subtitle1" color="white" opacity={0.8} textAlign="center">
-                Desenvolvedora fullstack focada em soluções eficientes e experiências de usuário
-                memoráveis
+                {t("header-2")}
               </MKTypography>
               <Stack direction="row" spacing={2} mt={4}>
                 <MKButton
@@ -57,12 +60,12 @@ export default function Header() {
                     }
                   }}
                 >
-                  Entre em contato
+                  {t("header-btn-1")}
                 </MKButton>
                 <a href={cv} download="curriculo.pdf">
                   <MKButton>
                     <DownloadIcon />
-                    <Stack ml={1}>Currículo</Stack>
+                    <Stack ml={1}>{t("header-btn-2")}</Stack>
                   </MKButton>
                 </a>
               </Stack>

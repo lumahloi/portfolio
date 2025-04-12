@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 import Portfolio from "layouts/pages/portfolio";
+import "./i18n.js";
 
 export default function App() {
   const { pathname } = useLocation();

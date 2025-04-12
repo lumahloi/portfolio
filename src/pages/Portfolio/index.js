@@ -2,28 +2,26 @@ import Card from "@mui/material/Card";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
-
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-
 import DefaultFooter from "examples/Footers/DefaultFooter";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-
 import Header from "pages/Portfolio/sections/Header";
 import Sobre from "pages/Portfolio/sections/Sobre";
 import Projetos from "pages/Portfolio/sections/Projetos";
 import Experiencia from "pages/Portfolio/sections/Experiencia";
 import Contato from "pages/Portfolio/sections/Contato";
-
-const date = new Date().getFullYear();
-
+import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 
 function Portfolio() {
+  const date = new Date().getFullYear();
   const sobreRef = useRef(null);
   const projetosRef = useRef(null);
   const experienciaRef = useRef(null);
   const contatoRef = useRef(null);
+
+  const { t } = useTranslation();
 
   const scrollTo = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -31,19 +29,19 @@ function Portfolio() {
 
   const navbarRoutes = [
     {
-      name: "Sobre",
+      name: t("nav-1"),
       onClick: () => scrollTo(sobreRef),
     },
     {
-      name: "Projetos",
+      name: t("nav-2"),
       onClick: () => scrollTo(projetosRef),
     },
     {
-      name: "Experiências",
+      name: t("nav-3"),
       onClick: () => scrollTo(experienciaRef),
     },
     {
-      name: "Contato",
+      name: t("nav-4"),
       onClick: () => scrollTo(contatoRef),
     },
   ];
@@ -68,26 +66,26 @@ function Portfolio() {
     ],
     menus: [
       {
-        name: "Sobre",
-        items: [{ name: "Quem sou", onClick: () => scrollTo(sobreRef) }],
+        name: t("nav-1"),
+        items: [{ name: t("footer-txt-1"), onClick: () => scrollTo(sobreRef) }],
       },
       {
-        name: "Projetos",
-        items: [{ name: "Meus Projetos", onClick: () => scrollTo(projetosRef) }],
+        name: t("nav-2"),
+        items: [{ name: t("footer-txt-2"), onClick: () => scrollTo(projetosRef) }],
       },
       {
-        name: "Experiências",
-        items: [{ name: "Experiência Profissional", onClick: () => scrollTo(experienciaRef) }],
+        name: t("nav-3"),
+        items: [{ name: t("footer-txt-3"), onClick: () => scrollTo(experienciaRef) }],
       },
       {
-        name: "Contato",
-        items: [{ name: "Fale comigo", onClick: () => scrollTo(contatoRef) }],
+        name: t("nav-4"),
+        items: [{ name: t("nav-4"), onClick: () => scrollTo(contatoRef) }],
       },
     ],
 
     copyright: (
       <MKTypography variant="button" fontWeight="regular">
-        Todos os direitos reservados. &copy; {date} Portfolio por{" "}
+        {t("footer-main-1")} &copy; {date} {t("footer-main-2")}{" "}
         <MKTypography
           component="a"
           href="https://github.com/lumahloi"
@@ -98,7 +96,7 @@ function Portfolio() {
         >
           Lumah Pereira
         </MKTypography>
-        . Copyright &copy; {date} Material Kit por{" "}
+        . Copyright &copy; {date} Material Kit {t("footer-main-3")}{" "}
         <MKTypography
           component="a"
           href="https://www.creative-tim.com"

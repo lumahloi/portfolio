@@ -11,8 +11,10 @@ import MKSocialButton from "components/MKSocialButton";
 import MKButton from "components/MKButton";
 
 import bgContact from "assets/images/bg-contact.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function Contato() {
+  const { t } = useTranslation();
   return (
     <>
       <MKBox component="section" py={{ xs: 0, sm: 12 }}>
@@ -52,10 +54,10 @@ export default function Contato() {
               textAlign="center"
             >
               <MKTypography variant="h3" color="white">
-                Vamos desenvolver algo incrível!
+                {t("contact-title")}
               </MKTypography>
               <MKTypography variant="body2" color="white" mb={3} mt={2}>
-                Entre em contato através das formas listadas abaixo e vamos colaborar em projetos.
+                {t("contact-1")}
               </MKTypography>
               <Grid container spacing={1} justifyContent="center">
                 <Grid item xs={12} sm="auto">

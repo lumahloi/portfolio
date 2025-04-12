@@ -4,7 +4,10 @@ import Grid from "@mui/material/Grid";
 import MKTypography from "components/MKTypography";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
+import { useTranslation } from "react-i18next";
+
 export default function Experiencia() {
+  const { t } = useTranslation();
   return (
     <>
       <MKBox component="section" py={12}>
@@ -17,7 +20,7 @@ export default function Experiencia() {
             justifyContent="center"
             sx={{ mx: "auto", textAlign: "center" }}
           >
-            <MKTypography variant="h2">Experiência profissional</MKTypography>
+            <MKTypography variant="h2">{t("experiences-title")}</MKTypography>
           </Grid>
 
           <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">

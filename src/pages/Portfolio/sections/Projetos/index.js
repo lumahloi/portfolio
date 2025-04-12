@@ -10,6 +10,8 @@ import imgMovienews from "assets/images/p-movienews-1.jpg";
 import imgSisu from "assets/images/p-sisu.jpg";
 import imgSocialmana from "assets/images/p-socialmana-1.jpg";
 
+import { useTranslation } from "react-i18next";
+
 const projetos = [
   {
     id: 1,
@@ -66,12 +68,13 @@ const projetos = [
 ];
 
 export default function Projetos() {
+  const { t } = useTranslation();
   return (
     <MKBox component="section" py={2}>
       <Container>
         <Grid container item xs={12} lg={6}>
           <MKTypography variant="h3" mb={6}>
-            Meus projetos
+            {t("projects-title")}
           </MKTypography>
         </Grid>
 
