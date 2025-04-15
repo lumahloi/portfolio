@@ -1,7 +1,7 @@
 export const experiencias = [
   {
     id: 1,
-    color: "secondary",
+    color: "primary",
     name: "Estagiária em Desenvolvimento FullStack",
     where: "Ministério Público do Rio de Janeiro",
     date: "Julho 2024 - o momento",

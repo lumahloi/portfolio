@@ -1,8 +1,9 @@
 import MKBox from "components/MKBox";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import Icon from "@mui/material/Icon";
 import MKTypography from "components/MKTypography";
-import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
+// import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";

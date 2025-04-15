@@ -1,7 +1,7 @@
 export const experiencias = [
   {
     id: 1,
-    color: "secondary",
+    color: "primary",
     name: "FullStack Development Intern",
     where: "Rio de Janeiro Public Prosecutor's Office (Ministério Público do Rio de Janeiro)",
     date: "July 2024 - current",

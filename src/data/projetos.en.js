@@ -1,7 +1,5 @@
 import imgBysound from "assets/images/p-bysound.jpg";
 import imgMeowverse from "assets/images/p-meowverse-1.jpg";
-import imgMovienews from "assets/images/p-movienews-1.jpg";
-import imgSisu from "assets/images/p-sisu.jpg";
 import imgSocialmana from "assets/images/p-socialmana-1.jpg";
 
 export const projetos = [
@@ -19,7 +17,7 @@ export const projetos = [
     description:
       "Collectibles store. Browse the extensive product catalog, add your favorite products to your cart and checkout.",
     image: imgMeowverse,
-    tags: ["PHP", "Bootstrap", "JavaScript", "MySQL"],
+    tags: ["PHP", "Bootstrap", "JavaScript", "MySQL", "ajax", "jQuery"],
     github: "https://github.com/lumahloi/meowverse",
   },
   {
@@ -30,23 +28,6 @@ export const projetos = [
     image: imgSocialmana,
     tags: ["React", "Node", "MySQL"],
     github: "https://github.com/lumahloi/social-mana",
-  },
-  {
-    id: 3,
-    title: "MovieNews: News about Movies",
-    description: "Platform that returns information and news related to a film.",
-    image: imgMovienews,
-    tags: ["HTML", "CSS", "Java", "OMDB Api", "News Api"],
-    github: "https://github.com/lumahloi/movienews",
-  },
-  {
-    id: 4,
-    title: "Sisu Simulator",
-    description:
-      "Weighted average calculator that seeks to simulate the same procedure used by Sisu.",
-    image: imgSisu,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/lumahloi/simulador-sisu",
   },
   // {
   //   id: X,
