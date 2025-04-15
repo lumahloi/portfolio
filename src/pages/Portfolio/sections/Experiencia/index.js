@@ -1,7 +1,8 @@
 import MKBox from "components/MKBox";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
+import ExperienciasTimeline from "./sections/ExperienciasTimeline.js";
 import MKTypography from "components/MKTypography";
 // import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
@@ -34,7 +35,7 @@ export default function Experiencia() {
           </Grid>
 
           <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">
-            {experiencias.map((experiencia) => (
+            {/* {experiencias.map((experiencia) => (
               <Grid item xs={12} md={6} lg={12} key={experiencia.id}>
                 <DefaultReviewCard
                   color={experiencia.color}
@@ -44,7 +45,8 @@ export default function Experiencia() {
                   review={experiencia.review}
                 />
               </Grid>
-            ))}
+            ))} */}
+            <ExperienciasTimeline experiencias={experiencias} />
           </Grid>
         </Container>
       </MKBox>
