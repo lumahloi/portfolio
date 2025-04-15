@@ -13,6 +13,33 @@ import Experiencia from "pages/Portfolio/sections/Experiencia";
 import Contato from "pages/Portfolio/sections/Contato";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import PropTypes from "prop-types"; // Adicione esta linha
+
+const AnimatedSection = ({ children, delay = 0 }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+// Validação de props
+AnimatedSection.propTypes = {
+  children: PropTypes.node.isRequired,
+  delay: PropTypes.number,
+};
 
 function Portfolio() {
   const date = new Date().getFullYear();
@@ -128,16 +155,27 @@ function Portfolio() {
         }}
       >
         <div ref={sobreRef}>
-          <Sobre />
+          <AnimatedSection>
+            <Sobre />
+          </AnimatedSection>
         </div>
+
         <div ref={projetosRef}>
-          <Projetos />
+          <AnimatedSection delay={0.2}>
+            <Projetos />
+          </AnimatedSection>
         </div>
+
         <div ref={experienciaRef}>
-          <Experiencia />
+          <AnimatedSection delay={0.4}>
+            <Experiencia />
+          </AnimatedSection>
         </div>
+
         <div ref={contatoRef} id="contato">
-          <Contato />
+          <AnimatedSection delay={0.6}>
+            <Contato />
+          </AnimatedSection>
         </div>
       </Card>
 
