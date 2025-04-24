@@ -1,6 +1,7 @@
 import imgBysound from "assets/images/p-bysound.jpg";
 import imgMeowverse from "assets/images/p-meowverse-1.jpg";
 import imgSocialmana from "assets/images/p-socialmana-1.jpg";
+import imgBookbuddy from "assets/images/p-bookbuddy-1.jpg";
 
 export const projetos = [
   {
