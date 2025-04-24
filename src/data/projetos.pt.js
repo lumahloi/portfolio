@@ -32,7 +32,7 @@ export const projetos = [
   },
   {
     id: 6,
-    title: "BookBuddy: rede social",
+    title: "BookBuddy: Rede Social",
     description:
       "Rede social simples focada no compartilhamento de opiniões sobre livros. Conecte-se com novas amizades, deixe suas opiniões e organize seus livros em listas.",
     image: imgBookbuddy,
