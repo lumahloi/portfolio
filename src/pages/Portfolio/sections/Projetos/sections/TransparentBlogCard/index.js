@@ -2,51 +2,63 @@ import PropTypes from "prop-types";
 import Card from "@mui/material/Card";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import Link from "@mui/material/Link";
 import { useTheme } from "@mui/material/styles";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 function TransparentBlogCard({ image, title, description, tags = [], github }) {
   const theme = useTheme();
 
   const imageTemplate = (
-    <Link href={github} target="_blank" rel="noopener noreferrer" sx={{ display: "block" }}>
-      <MKBox position="relative" borderRadius="lg">
-        <MKBox
-          component="img"
-          src={image}
-          alt={title}
-          borderRadius="lg"
-          shadow="md"
-          width="100%"
-          position="relative"
-          zIndex={1}
+    <MKBox
+      position="relative"
+      borderRadius="lg"
+      sx={{
+        overflow: "hidden",
+        backgroundColor: theme.palette.primary.main,
+        backgroundImage: theme.palette.primary.main, // para garantir consistência
+      }}
+    >
+      {github && (
+        <IconButton
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          color="white"
           sx={{
-            cursor: "pointer",
-            transition: "transform 0.3s ease",
+            position: "absolute",
+            top: 8,
+            left: 8,
+            zIndex: 3,
+            backgroundColor: theme.palette.primary.main,
+            backdropFilter: "blur(6px)",
             "&:hover": {
-              transform: "scale(1.02)",
+              backgroundColor: "#000000",
             },
           }}
-        />
-        <MKBox
-          borderRadius="lg"
-          shadow="md"
-          width="100%"
-          height="100%"
-          position="absolute"
-          left={0}
-          top={0}
-          sx={{
-            backgroundImage: `url(${image})`,
-            transform: "scale(0.94)",
-            filter: "blur(12px)",
-            backgroundSize: "cover",
-          }}
-        />
-      </MKBox>
-    </Link>
+        >
+          <GitHubIcon />
+        </IconButton>
+      )}
+
+      <MKBox
+        component="img"
+        src={image}
+        alt={title}
+        width="100%"
+        position="relative"
+        zIndex={2}
+        sx={{
+          transition: "transform 0.3s ease",
+          "&:hover": {
+            transform: "scale(1.02)",
+          },
+          display: "block",
+        }}
+      />
+    </MKBox>
   );
 
   return (
@@ -60,25 +72,9 @@ function TransparentBlogCard({ image, title, description, tags = [], github }) {
       {imageTemplate}
 
       <MKBox pt={2} pb={3}>
-        <Link
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          color="inherit"
-          underline="none"
-        >
-          <MKTypography
-            variant="h5"
-            gutterBottom
-            color="white"
-            sx={{
-              cursor: "pointer",
-              transition: "color 0.3s ease",
-            }}
-          >
-            {title}
-          </MKTypography>
-        </Link>
+        <MKTypography variant="h5" gutterBottom color="white">
+          {title}
+        </MKTypography>
 
         <MKTypography variant="body2" component="p" color="text" mb={3}>
           {description}
@@ -123,7 +119,7 @@ TransparentBlogCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
-  github: PropTypes.string.isRequired,
+  github: PropTypes.string,
 };
 
 export default TransparentBlogCard;
