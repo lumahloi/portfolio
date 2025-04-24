@@ -83,10 +83,14 @@ const ExperienciasTimeline = ({ experiencias }) => {
                 sx={{
                   position: "relative",
                   width: { xs: "100%", md: "50%" },
-                  pl: { xs: 6, md: 0 },
+                  pl: {
+                    xs: attrIndex % 2 === 1 ? "48px" : "6px",
+                    md: attrIndex % 2 === 1 ? "48px" : 0,
+                  },
                   pr: { xs: 2, md: 6 },
                   pb: 4,
                   left: attrIndex % 2 === 0 ? { md: 0 } : { md: "50%" },
+                  right: attrIndex % 2 === 1 ? { md: "50%" } : { md: 0 },
                   "&::after": {
                     content: '""',
                     position: "absolute",
@@ -96,8 +100,12 @@ const ExperienciasTimeline = ({ experiencias }) => {
                     borderRadius: "50%",
                     top: "50%",
                     transform: "translateY(-50%)",
-                    zIndex: 2,
-                    left: { xs: "-10px", md: attrIndex % 2 === 0 ? "calc(100% - 10px)" : "-10px" },
+                    left: {
+                      md: attrIndex % 2 === 0 ? "calc(100% - 10px)" : "-10px",
+                    },
+                    right: {
+                      md: attrIndex % 2 === 1 ? "-10px" : "calc(100% - 10px)",
+                    },
                   },
                 }}
               >
