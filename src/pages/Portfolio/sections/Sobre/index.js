@@ -4,7 +4,6 @@ import MKSocialButton from "components/MKSocialButton";
 import MKButton from "components/MKButton";
 
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import DownloadIcon from "@mui/icons-material/Download";
 import MailIcon from "@mui/icons-material/Mail";
@@ -17,6 +16,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import { useTranslation } from "react-i18next";
 
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+
 export default function Sobre() {
   const { t } = useTranslation();
 
@@ -26,34 +29,100 @@ export default function Sobre() {
         <Container>
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} lg={4} md={12} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
-              <Card>
-                <MKBox position="relative" borderRadius="lg" mx={2} mt={-3}>
-                  <MKBox
-                    component="img"
-                    src={profileImage}
-                    alt="Lumah Pereira em Pixel Art"
-                    borderRadius="lg"
-                    width="100%"
-                    position="relative"
-                    zIndex={1}
-                  />
-                  <MKBox
-                    borderRadius="lg"
-                    shadow="md"
-                    width="100%"
-                    height="100%"
-                    position="absolute"
-                    left={0}
-                    top={0}
-                    sx={{
-                      backgroundImage: `url(${profileImage})`,
-                      transform: "scale(0.94)",
-                      filter: "blur(12px)",
-                      backgroundSize: "cover",
+              <MKBox
+                position="relative"
+                borderRadius="lg"
+                mx={2}
+                mt={-3}
+                sx={{
+                  overflow: "visible",
+                  padding: "20px",
+                  border: "none",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    width: "calc(100% + 160px)",
+                    height: "calc(100% + 160px)",
+                    top: "-80px",
+                    left: "-80px",
+                    zIndex: 0,
+                  }}
+                >
+                  <Particles
+                    id="tsparticles"
+                    init={useCallback(async (engine) => {
+                      await loadSlim(engine);
+                    }, [])}
+                    options={{
+                      fullScreen: { enable: false },
+                      background: {
+                        color: "transparent",
+                      },
+                      fpsLimit: 120,
+                      interactivity: {
+                        events: {
+                          onHover: {
+                            enable: true,
+                            mode: "repulse",
+                          },
+                        },
+                        modes: {
+                          repulse: {
+                            distance: 100,
+                            duration: 0.4,
+                          },
+                        },
+                      },
+                      particles: {
+                        color: {
+                          value: "#ffffff",
+                        },
+                        links: {
+                          color: "#ffffff",
+                          distance: 150,
+                          enable: true,
+                          opacity: 0.5,
+                          width: 1,
+                        },
+                        move: {
+                          enable: true,
+                          speed: 2,
+                        },
+                        number: {
+                          density: {
+                            enable: true,
+                          },
+                          value: 80,
+                        },
+                        opacity: {
+                          value: 0.5,
+                        },
+                        shape: {
+                          type: "circle",
+                        },
+                        size: {
+                          value: { min: 1, max: 3 },
+                        },
+                      },
                     }}
                   />
-                </MKBox>
-              </Card>
+                </div>
+
+                <MKBox
+                  component="img"
+                  src={profileImage}
+                  alt="Lumah Pereira em Pixel Art"
+                  borderRadius="lg"
+                  width="100%"
+                  position="relative"
+                  zIndex={1}
+                  sx={{
+                    boxShadow: "0 4px 20px 0 rgba(0, 0, 0, 0.25)",
+                  }}
+                />
+              </MKBox>
             </Grid>
             <Grid item xs={12} lg={6} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
               <Grid container justifyContent="flex-start">
