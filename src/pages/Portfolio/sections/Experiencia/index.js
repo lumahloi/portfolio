@@ -29,10 +29,12 @@ export default function Experiencia() {
             justifyContent="center"
             sx={{ mx: "auto", textAlign: "center" }}
           >
-            <MKTypography variant="h2">{t("experiences-title")}</MKTypography>
+            <MKTypography variant="h2" color="white">
+              {t("experiences-title")}
+            </MKTypography>
           </Grid>
 
-          <Grid container spacing={3} sx={{ mt: 8 }} justifyContent="center">
+          <Grid container spacing={3} justifyContent="center">
             <ExperienciasTimeline experiencias={experiencias} />
           </Grid>
         </Container>

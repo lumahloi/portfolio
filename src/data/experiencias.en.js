@@ -3,7 +3,7 @@ export const experiencias = [
     id: 1,
     color: "primary",
     name: "FullStack Development Intern",
-    where: "Rio de Janeiro Public Prosecutor's Office (Ministério Público do Rio de Janeiro)",
+    where: "Ministério Público do Rio de Janeiro",
     date: "July 2024 - current",
     atributions: [
       "I was responsible for significant contributions that directly impacted the efficiency and performance of projects. I worked on the development and optimization of web systems using React and Django, always focusing on improving code quality and user experience.",
