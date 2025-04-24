@@ -14,7 +14,9 @@ function Footer({ content }) {
         <Grid container spacing={3}>
           <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
             <MKBox>
-              <MKTypography variant="h6">{brand.name}</MKTypography>
+              <MKTypography variant="h6" color="white">
+                {brand.name}
+              </MKTypography>
             </MKBox>
             <MKBox display="flex" alignItems="center" mt={3}>
               {socials.map(({ icon, link }, key) => (
@@ -25,7 +27,7 @@ function Footer({ content }) {
                   target="_blank"
                   rel="noreferrer"
                   variant="h5"
-                  color="dark"
+                  color="white"
                   opacity={0.8}
                   mr={key === socials.length - 1 ? 0 : 2.5}
                 >
@@ -43,6 +45,7 @@ function Footer({ content }) {
                 fontWeight="bold"
                 textTransform="capitalize"
                 mb={1}
+                color="white"
               >
                 {title}
               </MKTypography>
@@ -52,6 +55,7 @@ function Footer({ content }) {
                     {onClick ? (
                       <MKTypography
                         component="button"
+                        color="white"
                         onClick={onClick}
                         variant="button"
                         fontWeight="regular"
@@ -61,7 +65,6 @@ function Footer({ content }) {
                           border: "none",
                           padding: 0,
                           cursor: "pointer",
-                          color: "inherit",
                           fontFamily: "inherit",
                           fontSize: "0.9rem",
                         }}
@@ -77,6 +80,7 @@ function Footer({ content }) {
                         variant="button"
                         fontWeight="regular"
                         textTransform="capitalize"
+                        color="white"
                       >
                         {name}
                       </MKTypography>
@@ -87,6 +91,7 @@ function Footer({ content }) {
                         variant="button"
                         fontWeight="regular"
                         textTransform="capitalize"
+                        color="white"
                       >
                         {name}
                       </MKTypography>
@@ -98,7 +103,7 @@ function Footer({ content }) {
           ))}
 
           <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
-            {copyright}
+            <MKTypography sx={{ color: "white !important" }}>{copyright}</MKTypography>
           </Grid>
         </Grid>
       </Container>
