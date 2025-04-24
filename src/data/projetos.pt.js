@@ -1,6 +1,7 @@
 import imgBysound from "assets/images/p-bysound.jpg";
 import imgMeowverse from "assets/images/p-meowverse-1.jpg";
 import imgSocialmana from "assets/images/p-socialmana-1.jpg";
+import imgBookbuddy from "assets/images/p-bookbuddy-1.jpg";
 
 export const projetos = [
   {
@@ -29,13 +30,13 @@ export const projetos = [
     tags: ["React", "Node", "MySQL"],
     github: "https://github.com/lumahloi/social-mana",
   },
-  // {
-  //   id: X,
-  //   title: "NOME",
-  //   description:
-  //     "AAAAAAAAAAAAAAAAAA",
-  //   image: AQUI,
-  //   tags: ["", ""],
-  //   github: "AAAAAAAAAAAA",
-  // },
+  {
+    id: 6,
+    title: "BookBuddy: rede social",
+    description:
+      "Rede social simples focada no compartilhamento de opiniões sobre livros. Conecte-se com novas amizades, deixe suas opiniões e organize seus livros em listas.",
+    image: imgBookbuddy,
+    tags: ["React Native", "Google API", "Recite API"],
+    github: "https://github.com/lumahloi/bookbuddy",
+  },
 ];
