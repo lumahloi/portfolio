@@ -1,28 +1,9 @@
-/* eslint-disable no-param-reassign */
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { Fragment, useState, useEffect } from "react";
-
-// react-router components
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-// prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-// @mui material components
 import Container from "@mui/material/Container";
 import Icon from "@mui/material/Icon";
 import Popper from "@mui/material/Popper";
@@ -30,20 +11,14 @@ import Grow from "@mui/material/Grow";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
-
-// Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-// Material Kit 2 React example components
-import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
-import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
+import DefaultNavbarDropdown from "./DefaultNavbarDropdown";
+import DefaultNavbarMobile from "./DefaultNavbarMobile";
 
-// Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
-
-import { useTranslation } from "react-i18next";
 
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
@@ -61,7 +36,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
   useEffect(() => {
-    // A function that sets the display state for the DefaultNavbarMobile.
     function displayMobileNavbar() {
       if (window.innerWidth < breakpoints.values.lg) {
         setMobileView(true);
@@ -72,16 +46,10 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
       }
     }
 
-    /** 
-     The event listener that's calling the displayMobileNavbar function when 
-     resizing the window.
-    */
     window.addEventListener("resize", displayMobileNavbar);
 
-    // Call the displayMobileNavbar function to set the state with the initial value.
     displayMobileNavbar();
 
-    // Remove event listener on cleanup
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
@@ -106,11 +74,9 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     />
   ));
 
-  // Render the routes on the dropdown menu
   const renderRoutes = routes.map(({ name, collapse, columns, rowsPerColumn }) => {
     let template;
 
-    // Render the dropdown menu that should be display as columns
     if (collapse && columns && name === dropdownName) {
       const calculateColumns = collapse.reduce((resultArray, item, index) => {
         const chunkIndex = Math.floor(index / rowsPerColumn);
@@ -195,8 +161,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           })}
         </Grid>
       );
-
-      // Render the dropdown menu that should be display as list items
     } else if (collapse && name === dropdownName) {
       template = collapse.map((item) => {
         const linkComponent = {
@@ -284,7 +248,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     return template;
   });
 
-  // Routes dropdown menu
   const dropdownMenu = (
     <Popper
       anchorEl={dropdown}
@@ -333,7 +296,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     </Popper>
   );
 
-  // Render routes that are nested inside the dropdown menu routes
   const renderNestedRoutes = routes.map(({ collapse, columns }) =>
     collapse && !columns
       ? collapse.map(({ name: parentName, collapse: nestedCollapse }) => {
@@ -418,7 +380,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
       : null
   );
 
-  // Dropdown menu for the nested dropdowns
   const nestedDropdownMenu = (
     <Popper
       anchorEl={nestedDropdown}
@@ -494,42 +455,8 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           >
             {renderNavbarItems}
           </MKBox>
-          {/* <MKBox ml={{ xs: "auto", lg: 0 }}>
-            {action &&
-              (action.type === "internal" ? (
-                <MKButton
-                  component={Link}
-                  to={action.route}
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ) : (
-                <MKButton
-                  component="a"
-                  href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ))}
-          </MKBox> */}
+
           <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center" gap={1}>
-            {/* Botão de troca de idioma */}
             <MKButton
               onClick={() => {
                 const newLang = i18n.language === "pt" ? "en" : "pt";
@@ -542,7 +469,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
               {i18n.language === "pt" ? "EN" : "PT"}
             </MKButton>
 
-            {/* Botão de ação se existir */}
             {action &&
               (action.type === "internal" ? (
                 <MKButton
@@ -604,7 +530,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   );
 }
 
-// Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
   brand: "Material Kit 2",
   transparent: false,
@@ -615,7 +540,6 @@ DefaultNavbar.defaultProps = {
   center: false,
 };
 
-// Typechecking props for the DefaultNavbar
 DefaultNavbar.propTypes = {
   brand: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.shape).isRequired,

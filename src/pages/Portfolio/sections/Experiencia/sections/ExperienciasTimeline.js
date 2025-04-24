@@ -1,6 +1,6 @@
+import { Box, Typography, Paper, Chip, useTheme, Stack } from "@mui/material";
 import React from "react";
 import PropTypes from "prop-types";
-import { Box, Typography, Paper, Chip, useTheme, Stack } from "@mui/material";
 
 const ExperienciasTimeline = ({ experiencias }) => {
   const theme = useTheme();

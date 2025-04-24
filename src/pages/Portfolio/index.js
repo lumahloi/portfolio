@@ -1,21 +1,24 @@
+import { useTranslation } from "react-i18next";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import Card from "@mui/material/Card";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import DefaultFooter from "examples/Footers/DefaultFooter";
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import Header from "pages/Portfolio/sections/Header";
-import Sobre from "pages/Portfolio/sections/Sobre";
-import Projetos from "pages/Portfolio/sections/Projetos";
-import Experiencia from "pages/Portfolio/sections/Experiencia";
-import Contato from "pages/Portfolio/sections/Contato";
-import { useTranslation } from "react-i18next";
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import PropTypes from "prop-types"; // Adicione esta linha
+
+import DefaultFooter from "./sections/DefaultFooter";
+import DefaultNavbar from "./sections/DefaultNavbar";
+import Header from "./sections/Header";
+import Sobre from "./sections/Sobre";
+import Projetos from "./sections/Projetos";
+import Experiencia from "./sections/Experiencia";
+import Contato from "./sections/Contato";
+
+import PropTypes from "prop-types";
 
 const AnimatedSection = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -35,7 +38,6 @@ const AnimatedSection = ({ children, delay = 0 }) => {
   );
 };
 
-// Validação de props
 AnimatedSection.propTypes = {
   children: PropTypes.node.isRequired,
   delay: PropTypes.number,

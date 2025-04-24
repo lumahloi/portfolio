@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
@@ -9,8 +11,6 @@ import MKBox from "components/MKBox";
 
 import bgOffice from "assets/images/bg-office.gif";
 import cv from "assets/cv/curriculo.pdf";
-
-import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const { t } = useTranslation();

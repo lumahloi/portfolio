@@ -1,13 +1,14 @@
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
-import TransparentBlogCard from "examples/Cards/BlogCards/TransparentBlogCard";
-
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import { projetos as projetosPT } from "../../../../data/projetos.pt";
 import { projetos as projetosEN } from "../../../../data/projetos.en";
+
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
+
+import TransparentBlogCard from "./sections/TransparentBlogCard";
 
 export default function Projetos() {
   const { t } = useTranslation();
