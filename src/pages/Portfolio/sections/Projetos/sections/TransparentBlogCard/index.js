@@ -5,8 +5,11 @@ import Stack from "@mui/material/Stack";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import Link from "@mui/material/Link";
+import { useTheme } from "@mui/material/styles";
 
 function TransparentBlogCard({ image, title, description, tags = [], github }) {
+  const theme = useTheme();
+
   const imageTemplate = (
     <Link href={github} target="_blank" rel="noopener noreferrer" sx={{ display: "block" }}>
       <MKBox position="relative" borderRadius="lg">
@@ -90,7 +93,7 @@ function TransparentBlogCard({ image, title, description, tags = [], github }) {
                 size="small"
                 sx={{
                   marginBottom: 1,
-                  backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.7)`,
+                  backgroundColor: theme.palette.primary.main,
                   color: "white !important",
                   backdropFilter: "blur(6px)",
                   "& .MuiChip-label": {
@@ -103,7 +106,7 @@ function TransparentBlogCard({ image, title, description, tags = [], github }) {
                     opacity: 0.9,
                   },
                   "&:hover": {
-                    backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.9)`,
+                    backgroundColor: theme.palette.primary.main,
                   },
                 }}
               />
@@ -113,33 +116,6 @@ function TransparentBlogCard({ image, title, description, tags = [], github }) {
       </MKBox>
     </Card>
   );
-}
-
-function getTagColor(tag) {
-  const colorMap = {
-    Flutterflow: "#4c3af0",
-    React: "#61dbfb",
-    JavaScript: "#f7e018",
-    PHP: "#777bb3",
-    Java: "#ec2025",
-    Firebase: "#ffcb2b",
-    MySQL: "#005d8a",
-    Node: "#80be03",
-    HTML: "#ff4b00",
-    CSS: "#1572b6",
-    Bootstrap: "#7708f7",
-    Supabase: "#3ecf8e",
-  };
-
-  return colorMap[tag] || "0B0D0E";
-}
-
-function hexToRgb(hex) {
-  hex = hex.replace("#", "");
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
-  return `${r}, ${g}, ${b}`;
 }
 
 TransparentBlogCard.propTypes = {

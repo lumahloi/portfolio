@@ -8,7 +8,7 @@ export const projetos = [
     id: 1,
     title: "BySound: Music Social Network",
     description:
-      "Mobile social network designed to connect people through music. Share your thoughts on your favorite songs, connect with your friends and see what they're listening to.",
+      "Social network that connects people through music. Share your thoughts on your favorite songs and find out what people are listening to.",
     image: imgBysound,
     tags: ["Flutterflow", "Spotify API", "Firebase"],
   },
@@ -16,18 +16,18 @@ export const projetos = [
     id: 2,
     title: "Meowverse: Online Store",
     description:
-      "Collectibles store. Browse the extensive product catalog, add your favorite products to your cart and checkout.",
+      "Collectibles store. Browse the extensive product catalog, add your favorite products to your cart and checkout these pretty collectibles.",
     image: imgMeowverse,
-    tags: ["PHP", "Bootstrap", "JavaScript", "MySQL", "ajax", "jQuery"],
+    tags: ["CSS", "PHP", "Bootstrap", "JavaScript", "MySQL", "jQuery"],
     github: "https://github.com/lumahloi/meowverse",
   },
   {
     id: 5,
     title: "Mana: Social Network",
     description:
-      "Social network inspired by Twitter/X and Reddit for posting thoughts. Connect with people and leave your opinion.",
+      "Twitter/X and Reddit-inspired social network for posting thoughts. Connect with people, leave your opinion, upvote or downvote posts.",
     image: imgSocialmana,
-    tags: ["React", "Node", "MySQL"],
+    tags: ["React", "Node.js", "CSS", "MySQL", "Express.js"],
     github: "https://github.com/lumahloi/social-mana",
   },
   {
@@ -36,7 +36,16 @@ export const projetos = [
     description:
       "Simple social network focused on sharing opinions about books. Connect with new friends, leave your opinions and organize your books into lists.",
     image: imgBookbuddy,
-    tags: ["React Native", "Google API", "Recite API"],
+    tags: ["React Native", "Google API", "Recite API", "JavaScript", "CSS"],
     github: "https://github.com/lumahloi/bookbuddy",
+  },
+  {
+    id: 7,
+    title: "Tweet Deleter",
+    description:
+      "Based on your Twitter/X credentials contained in the script, Selenium is activated and the deletion process is done automatically.",
+    image: imgBookbuddy,
+    tags: ["Python", "Selenium"],
+    github: "https://github.com/lumahloi/tweet-deleter",
   },
 ];
