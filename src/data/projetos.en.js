@@ -29,13 +29,13 @@ export const projetos = [
     tags: ["React", "Node", "MySQL"],
     github: "https://github.com/lumahloi/social-mana",
   },
-  // {
-  //   id: X,
-  //   title: "NOME",
-  //   description:
-  //     "AAAAAAAAAAAAAAAAAA",
-  //   image: AQUI,
-  //   tags: ["", ""],
-  //   github: "AAAAAAAAAAAA",
-  // },
+  {
+    id: 6,
+    title: "BookBuddy: Social Network",
+    description:
+      "Simple social network focused on sharing opinions about books. Connect with new friends, leave your opinions and organize your books into lists.",
+    image: imgBookbuddy,
+    tags: ["React Native", "Google API", "Recite API"],
+    github: "https://github.com/lumahloi/bookbuddy",
+  },
 ];
