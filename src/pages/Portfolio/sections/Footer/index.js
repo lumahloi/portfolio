@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function DefaultFooter({ content }) {
+function Footer({ content }) {
   const { brand, socials, menus, copyright } = content;
 
   return (
@@ -106,8 +106,8 @@ function DefaultFooter({ content }) {
   );
 }
 
-DefaultFooter.propTypes = {
+Footer.propTypes = {
   content: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object, PropTypes.array])).isRequired,
 };
 
-export default DefaultFooter;
+export default Footer;

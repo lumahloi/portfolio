@@ -8,7 +8,7 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function DefaultNavbarDropdown({
+function NavbarDropdown({
   name,
   icon,
   children,
@@ -77,8 +77,8 @@ function DefaultNavbarDropdown({
   );
 }
 
-// Setting default values for the props of DefaultNavbarDropdown
-DefaultNavbarDropdown.defaultProps = {
+// Setting default values for the props of NavbarDropdown
+NavbarDropdown.defaultProps = {
   children: false,
   collapseStatus: false,
   light: false,
@@ -86,8 +86,8 @@ DefaultNavbarDropdown.defaultProps = {
   route: "",
 };
 
-// Typechecking props for the DefaultNavbarDropdown
-DefaultNavbarDropdown.propTypes = {
+// Typechecking props for the NavbarDropdown
+NavbarDropdown.propTypes = {
   name: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
   children: PropTypes.node,
@@ -98,4 +98,4 @@ DefaultNavbarDropdown.propTypes = {
   collapse: PropTypes.bool.isRequired,
 };
 
-export default DefaultNavbarDropdown;
+export default NavbarDropdown;

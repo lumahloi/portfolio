@@ -10,16 +10,16 @@ import MuiLink from "@mui/material/Link";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-import DefaultNavbarDropdown from "./DefaultNavbarDropdown";
+import NavbarDropdown from "./NavbarDropdown";
 
-function DefaultNavbarMobile({ routes, open }) {
+function NavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
   const renderNavbarItems = routes.map(
     ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
-      <DefaultNavbarDropdown
+      <NavbarDropdown
         key={name}
         name={name}
         icon={icon}
@@ -124,7 +124,7 @@ function DefaultNavbarMobile({ routes, open }) {
               </MKBox>
             ))}
         </MKBox>
-      </DefaultNavbarDropdown>
+      </NavbarDropdown>
     )
   );
 
@@ -137,9 +137,9 @@ function DefaultNavbarMobile({ routes, open }) {
   );
 }
 
-DefaultNavbarMobile.propTypes = {
+NavbarMobile.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
   open: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
 };
 
-export default DefaultNavbarMobile;
+export default NavbarMobile;

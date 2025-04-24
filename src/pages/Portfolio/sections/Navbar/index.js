@@ -15,12 +15,12 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-import DefaultNavbarDropdown from "./DefaultNavbarDropdown";
-import DefaultNavbarMobile from "./DefaultNavbarMobile";
+import NavbarDropdown from "./NavbarDropdown";
+import NavbarMobile from "./NavbarMobile";
 
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
+function Navbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -54,7 +54,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   }, []);
 
   const renderNavbarItems = routes.map(({ name, icon, href, route, onClick, collapse }) => (
-    <DefaultNavbarDropdown
+    <NavbarDropdown
       key={name}
       name={name}
       icon={icon}
@@ -521,7 +521,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           borderRadius="xl"
           px={transparent ? 2 : 0}
         >
-          {mobileView && <DefaultNavbarMobile routes={routes} open={mobileNavbar} />}
+          {mobileView && <NavbarMobile routes={routes} open={mobileNavbar} />}
         </MKBox>
       </MKBox>
       {dropdownMenu}
@@ -530,7 +530,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   );
 }
 
-DefaultNavbar.defaultProps = {
+Navbar.defaultProps = {
   brand: "Material Kit 2",
   transparent: false,
   light: false,
@@ -540,7 +540,7 @@ DefaultNavbar.defaultProps = {
   center: false,
 };
 
-DefaultNavbar.propTypes = {
+Navbar.propTypes = {
   brand: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.shape).isRequired,
   transparent: PropTypes.bool,
@@ -570,4 +570,4 @@ DefaultNavbar.propTypes = {
   center: PropTypes.bool,
 };
 
-export default DefaultNavbar;
+export default Navbar;

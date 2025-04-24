@@ -10,8 +10,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-import DefaultFooter from "./sections/DefaultFooter";
-import DefaultNavbar from "./sections/DefaultNavbar";
+import Footer from "./sections/Footer";
+import Navbar from "./sections/Navbar";
 import Header from "./sections/Header";
 import Sobre from "./sections/Sobre";
 import Projetos from "./sections/Projetos";
@@ -143,7 +143,7 @@ function Portfolio() {
 
   return (
     <>
-      <DefaultNavbar brand="Lumah Pereira" routes={navbarRoutes} sticky />
+      <Navbar brand="Lumah Pereira" routes={navbarRoutes} sticky />
       <Header />
       <Card
         sx={{
@@ -182,7 +182,7 @@ function Portfolio() {
       </Card>
 
       <MKBox pt={6} px={1} mt={6}>
-        <DefaultFooter content={footerRoutes} />
+        <Footer content={footerRoutes} />
       </MKBox>
     </>
   );
