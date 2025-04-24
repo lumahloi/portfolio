@@ -143,8 +143,10 @@ function Portfolio() {
 
   return (
     <>
-      <Navbar brand="Lumah Pereira" routes={navbarRoutes} sticky />
+      <Navbar routes={navbarRoutes} sticky />
+
       <Header />
+
       <Card
         sx={{
           p: 2,

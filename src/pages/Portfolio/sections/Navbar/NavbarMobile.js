@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 import PropTypes from "prop-types";
 
@@ -13,6 +14,8 @@ import MKTypography from "components/MKTypography";
 import NavbarDropdown from "./NavbarDropdown";
 
 function NavbarMobile({ routes, open }) {
+  const theme = useTheme();
+
   const [collapse, setCollapse] = useState("");
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
@@ -42,6 +45,7 @@ function NavbarMobile({ routes, open }) {
                       textTransform="capitalize"
                       py={1}
                       px={0.5}
+                      color={theme.palette.text.main}
                     >
                       {item.name}
                     </MKTypography>
@@ -52,23 +56,22 @@ function NavbarMobile({ routes, open }) {
                         to={el.route ? el.route : ""}
                         href={el.href ? el.href : ""}
                         target={el.href ? "_blank" : ""}
-                        rel={el.href ? "noreferrer" : "noreferrer"}
+                        rel="noreferrer"
                         minWidth="11.25rem"
                         display="block"
                         variant="button"
-                        color="text"
                         textTransform="capitalize"
                         fontWeight="regular"
                         py={0.625}
                         px={2}
-                        sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
+                        color={theme.palette.text.main}
+                        sx={({ borders: { borderRadius } }) => ({
                           borderRadius: borderRadius.md,
                           cursor: "pointer",
                           transition: "all 300ms linear",
-
                           "&:hover": {
-                            backgroundColor: grey[200],
-                            color: dark.main,
+                            backgroundColor: theme.palette.dark.main,
+                            color: theme.palette.text.main,
                           },
                         })}
                       >
@@ -84,20 +87,18 @@ function NavbarMobile({ routes, open }) {
                     to={item.route ? item.route : ""}
                     href={item.href ? item.href : ""}
                     target={item.href ? "_blank" : ""}
-                    rel={item.href ? "noreferrer" : "noreferrer"}
-                    sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
+                    rel="noreferrer"
+                    sx={({ borders: { borderRadius } }) => ({
                       borderRadius: borderRadius.md,
                       cursor: "pointer",
                       transition: "all 300ms linear",
                       py: 1,
                       px: 1.625,
-
                       "&:hover": {
-                        backgroundColor: grey[200],
-                        color: dark.main,
-
+                        backgroundColor: theme.palette.dark.main,
+                        color: theme.palette.text.main,
                         "& *": {
-                          color: dark.main,
+                          color: theme.palette.text.main,
                         },
                       },
                     })}
@@ -107,14 +108,15 @@ function NavbarMobile({ routes, open }) {
                       variant="button"
                       fontWeight="bold"
                       textTransform="capitalize"
+                      color={theme.palette.text.main}
                     >
                       {item.name}
                     </MKTypography>
                     <MKTypography
                       display="block"
                       variant="button"
-                      color="text"
                       fontWeight="regular"
+                      color={theme.palette.text.main}
                       sx={{ transition: "all 300ms linear" }}
                     >
                       {item.description}
