@@ -67,12 +67,10 @@ function TransparentBlogCard({ image, title, description, tags = [], github }) {
           <MKTypography
             variant="h5"
             gutterBottom
+            color="white"
             sx={{
               cursor: "pointer",
               transition: "color 0.3s ease",
-              "&:hover": {
-                color: "primary.main",
-              },
             }}
           >
             {title}
@@ -95,7 +93,6 @@ function TransparentBlogCard({ image, title, description, tags = [], github }) {
                   backgroundColor: `rgba(${hexToRgb(getTagColor(tag))}, 0.7)`,
                   color: "white !important",
                   backdropFilter: "blur(6px)",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
                   "& .MuiChip-label": {
                     color: "white",
                     fontWeight: 500,

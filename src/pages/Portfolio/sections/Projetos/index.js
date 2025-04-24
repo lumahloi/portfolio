@@ -22,7 +22,7 @@ export default function Projetos() {
     <MKBox component="section" py={2}>
       <Container>
         <Grid container item xs={12} lg={6}>
-          <MKTypography variant="h3" mb={6}>
+          <MKTypography variant="h3" mb={6} color="white">
             {t("projects-title")}
           </MKTypography>
         </Grid>
