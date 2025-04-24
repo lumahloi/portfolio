@@ -462,11 +462,11 @@ function Navbar({ brand, routes, transparent, light, action, sticky, relative, c
                 const newLang = i18n.language === "pt" ? "en" : "pt";
                 i18n.changeLanguage(newLang);
               }}
-              variant="text"
+              color="primary"
               size="small"
-              color={light ? "white" : "dark"}
+              sx={{ fontWeight: "bold", px: 2 }}
             >
-              {i18n.language === "pt" ? "EN" : "PT"}
+              {i18n.language === "pt" ? "🇺🇸 EN" : "🇧🇷 PT-BR"}
             </MKButton>
 
             {action &&
