@@ -1,7 +1,8 @@
 import imgBysound from "assets/images/p-bysound.jpg";
 import imgMeowverse from "assets/images/p-meowverse-1.jpg";
 import imgSocialmana from "assets/images/p-socialmana-1.jpg";
-import imgBookbuddy from "assets/images/p-bookbuddy-1.jpg";
+import imgBookbuddy from "assets/images/p-bookbuddy.jpg";
+import imgTweetdeleter from "assets/images/p-tweetdeleter.jpg";
 
 export const projetos = [
   {
@@ -19,7 +20,7 @@ export const projetos = [
       "Loja de artigos colecionáveis. Navegue pelo amplo catálogo de produtos, adicione seus produtos favoritos ao carrinho e realize o pagamento.",
     image: imgMeowverse,
     tags: ["CSS", "PHP", "Bootstrap", "JavaScript", "MySQL", "jQuery"],
-    github: "https://github.com/lumahloi/meowverse",
+    github: "https://www.github.com/lumahloi/meowverse",
   },
   {
     id: 5,
@@ -28,7 +29,7 @@ export const projetos = [
       "Rede social inspirada no Twitter/X e Reddit para postagem de pensamentos. Conecte-se com a galera e deixe sua opinião.",
     image: imgSocialmana,
     tags: ["React", "Node.js", "CSS", "MySQL", "Express.js"],
-    github: "https://github.com/lumahloi/social-mana",
+    github: "https://www.github.com/lumahloi/social-mana",
   },
   {
     id: 6,
@@ -37,15 +38,15 @@ export const projetos = [
       "Rede social simples focada no compartilhamento de opiniões sobre livros. Conecte-se com novas amizades, deixe suas opiniões e organize seus livros em listas.",
     image: imgBookbuddy,
     tags: ["React Native", "Google API", "Recite API", "JavaScript", "CSS"],
-    github: "https://github.com/lumahloi/bookbuddy",
+    github: "https://www.github.com/lumahloi/bookbuddy",
   },
   {
     id: 7,
     title: "Tweet Deleter",
     description:
       "Baseado em suas credenciais do Twitter/X contidas no script, o Selenium é ativado e o processo de deleção é feito automaticamente.",
-    image: imgBookbuddy,
+    image: imgTweetdeleter,
     tags: ["Python", "Selenium"],
-    github: "https://github.com/lumahloi/tweet-deleter",
+    github: "https://www.github.com/lumahloi/tweet-deleter",
   },
 ];
