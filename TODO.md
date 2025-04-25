@@ -1,6 +1,0 @@
-- filtro de projetos por tag
-- evidenciar o botao de trocar idioma
-- n to mt satisfeita com o design do sobre mim
-- n to mt satisfeita com o design do experiencia
-- limpar o codigo
-- trocar o bg do contato
