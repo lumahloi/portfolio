@@ -12,6 +12,7 @@ export const projetos = [
       "Rede social que conecta pessoas através da música. Compartilhe seus pensamentos sobre suas músicas favoritas e saiba o que estão ouvindo.",
     image: imgBysound,
     tags: ["Flutterflow", "Spotify API", "Firebase"],
+    github: "https://app.flutterflow.io/project/social-meida-app-u-i-ttarcq",
   },
   {
     id: 2,

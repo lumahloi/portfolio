@@ -12,6 +12,7 @@ export const projetos = [
       "Social network that connects people through music. Share your thoughts on your favorite songs and find out what people are listening to.",
     image: imgBysound,
     tags: ["Flutterflow", "Spotify API", "Firebase"],
+    github: "https://app.flutterflow.io/project/social-meida-app-u-i-ttarcq",
   },
   {
     id: 2,
