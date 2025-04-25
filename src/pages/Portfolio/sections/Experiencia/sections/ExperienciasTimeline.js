@@ -125,10 +125,10 @@ const ExperienciasTimeline = ({ experiencias }) => {
                   }}
                 >
                   <Typography variant="h6" color="primary" fontWeight={600} mb={1}>
-                    {atribuicao.title || `Responsabilidade ${attrIndex + 1}`}
+                    {atribuicao.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {atribuicao.description || atribuicao}
+                    {atribuicao.description}
                   </Typography>
                 </Paper>
               </Box>
