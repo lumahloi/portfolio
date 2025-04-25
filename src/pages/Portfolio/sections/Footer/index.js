@@ -103,7 +103,14 @@ function Footer({ content }) {
           ))}
 
           <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
-            <MKTypography sx={{ color: "white !important" }}>{copyright}</MKTypography>
+            <MKTypography
+              sx={{
+                color: "white !important",
+                "& *": { color: "inherit !important" }, // Força herança para elementos filhos
+              }}
+            >
+              {copyright}
+            </MKTypography>
           </Grid>
         </Grid>
       </Container>
