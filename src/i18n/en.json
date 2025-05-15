@@ -13,6 +13,73 @@
     "about": "My mission is to create technological solutions that make people's daily lives easier and help businesses grow intelligently. I'm always looking to learn new tools, improve my web development skills, and collaborate with diverse and innovative teams. Motivated by challenges, passionate about clean code and best practices, I believe that technology is a path to transforming realities — and I want to be part of that change.",
     "working": "Developing software at",
     "linkedin": "Let's connect on",
-    "github": "Check my repos on"
-  }
+    "github": "Check my repos on",
+    "aboutme": "About"
+  },
+  "experiences": [
+      {
+        "company": "Ministério Público do Rio de Janeiro",
+        "positions": [
+          {
+            "title": "Full Stack Development Intern",
+            "year": "07.2024 - the moment",
+            "description": "- ♦ Experience in the development of web applications;- ♦ Support in the technical documentation of projects, ensuring organization and clarity for the team;- ♦ Active participation in meetings, contributing with daily updates and task alignment;- ♦ Code versioning and continuous integration;- ♦ Support in the maintenance and organization of environments;- ♦ Execution of activities such as code refactoring, unit and manual testing, development of new features and creation of technical reports;",
+            "skills": [
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "Git",
+              "Python",
+              "Django",
+              "Scrum",
+              "Kanban",
+              "MKDocs",
+              "Microsoft Azure",
+              "Red Hat OpenShift"
+            ]
+          }
+        ]
+      },
+      {
+        "company": "Education",
+        "positions": [
+          {
+            "title": "Systems Analysis and Development Associate's Degree | FAETERJ-Rio",
+            "year": "03.2023 - the moment",
+            "description": "",
+            "skills": []
+          },
+          {
+            "title": "NLW Pocket: Javascript - Intermediate Full-stack | Rocketseat",
+            "year": "09.2024",
+            "description": "",
+            "skills": ["Node.js","API REST","TypeScript","Fastify","DrizzleORM","PostgreSQL","Docker","Zod","ReactJS","Typescript","Vite","TailwindCSS","TanStack Query"]
+          },
+          {
+            "title": "Endpoint Security | Cisco",
+            "year": "09.2024",
+            "description": "Extensive knowledge of network security fundamentals, as well as operating systems and endpoint security.",
+            "skills": ["Anti-Malware Protection","Application Security","Common Cyber ​​Threats","System and Device Defense","TCP/IP/UDP Vulnerabilities","Basic Linux"]
+          },
+          {
+            "title": "Networking Basics | Cisco",
+            "year": "10.2024",
+            "description": "Knowledge of network types, how they work, how devices send and receive data, types of network cabling, how IP addresses find information on the Internet, how transport and applications operate, and practice building a home wireless network.",
+            "skills": ["IPv4 Addresses","Network Types","Wireless Access","Protocol Standards"]
+          },
+          {
+            "title": "Database Design | Oracle Academy",
+            "year": "12.2024",
+            "description": "Analyze complex business scenarios and create a data model—a conceptual representation of an organization's information. Examine data requirements and design a vendor-neutral relational database. Group collaboration and project management skills are developed as entity and relationship diagram models are completed. This course culminates in a project that challenges students to design a database solution for a business or organization.",
+            "skills": []
+          },
+          {
+            "title": "Network Defense | Cisco",
+            "year": "03.2025",
+            "description": "Extensive knowledge of network monitoring and protection techniques, including access control, firewalls, cloud security, and encryption. Also familiar with assessing and responding to security alerts.",
+            "skills": ["Cloud Security","Firewalls","Hashing","Integrity and Authenticity","Physical Security","Public and Private Encryption"]
+          }
+        ]
+      }
+  ]
 }

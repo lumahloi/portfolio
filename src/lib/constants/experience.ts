@@ -1,76 +1,64 @@
 import type { Experience } from "../types";
+import pt from "@/i18n/pt.json";
+import en from "@/i18n/en.json";
 
-export const EXPERIENCES: Experience[] = [
-  {
-    company: "Ministério Público do Rio de Janeiro",
+export function getConstants(currentPath: string) {
+  const lang = currentPath.startsWith("/en") ? "en" : "pt";
+  const t = lang === "en" ? en : pt;
+
+  const EXPERIENCES = [
+      {
+    company: t.experiences[0].company,
     positions: [
       {
-        title: "Estagiária em Desenvolvimento Full Stack",
-        year: "07.2024 - o momento",
-        description: `
-- ♦ Atuação no desenvolvimento de aplicações web;
-- ♦ Apoio na documentação técnica de projetos, garantindo a organização e clareza para a equipe;
-- ♦ Participação ativa em reuniões, contribuindo com atualizações diárias e alinhamento das tarefas;
-- ♦ Versionamento de código e integração contínua;
-- ♦ Apoio na manutenção e organização de ambientes;
-- ♦ Execução de atividades como refatoração de código, testes unitários e manuais, desenvolvimento de novas funcionalidades e criação de relatórios técnicos;
-            `,
-        skills: [
-          "JavaScript",
-          "TypeScript",
-          "React",
-          "Git",
-          "Python",
-          "Django",
-          "Scrum",
-          "Kanban",
-          "MKDocs",
-          "Microsoft Azure",
-          "Red Hat OpenShift"
-        ]
+        title: t.experiences[0].positions[0].title,
+        year: t.experiences[0].positions[0].year,
+        description: t.experiences[0].positions[0].description,
+        skills: t.experiences[0].positions[0].skills,
       },
     ],
   },
   {
-    company: "Educação",
+    company: t.experiences[1].company,
     positions: [
       {
-        title: "Técnologo em Análise e Desenvolvimento de Sistemas | FAETERJ-Rio",
-        year: "03.2023 - o momento",
-        description: ``,
-        skills: []
+        title: t.experiences[1].positions[0].title,
+        year: t.experiences[1].positions[0].year,
+        description: t.experiences[1].positions[0].description,
+        skills: t.experiences[1].positions[0].skills
       },
       {
-        title: "NLW Pocket: Javascript - Full-stack Intermediário | Rocketseat",
-        year: "09.2024",
-        description: ``,
-        skills: ["Node.js","API REST","TypeScript","Fastify","DrizzleORM","PostgreSQL","Docker","Zod","ReactJS","Typescript","Vite","TailwindCSS","TanStack Query"]
+        title: t.experiences[1].positions[1].title,
+        year: t.experiences[1].positions[1].year,
+        description: t.experiences[1].positions[1].description,
+        skills: t.experiences[1].positions[1].skills
       },
       {
-        title: "Segurança de Endpoints | Cisco",
-        year: "09.2024",
-        description: `Amplo conhecimento dos conceitos básicos de segurança de rede, bem como de sistemas operacionais e segurança de endpoints.`,
-        skills: ["Proteção anti-malware","Segurança de aplicações","Ameaças virtuais comuns","Defesa de sistemas e dispositivos","Vulnerabilidades TCP/IP/UDP","Linux básico"]
+        title: t.experiences[1].positions[2].title,
+        year: t.experiences[1].positions[2].year,
+        description: t.experiences[1].positions[2].description,
+        skills: t.experiences[1].positions[2].skills
       },
       {
-        title: "Básico em Redes | Cisco",
-        year: "10.2024",
-        description: `Conhecimento dos tipos de redes, como elas funcionam, como os dispositivos enviam e recebem dados, os tipos de cabeamento de rede, como os endereços IP encontram informações na internet, como o transporte e os aplicativos operam, e prática à construção de uma rede sem fio doméstica.`,
-        skills: ["Endereços IPV4","Tipos de rede","Acesso sem fio","Padrões de protocolos"]
+        title: t.experiences[1].positions[3].title,
+        year: t.experiences[1].positions[3].year,
+        description: t.experiences[1].positions[3].description,
+        skills: t.experiences[1].positions[3].skills
       },
       {
-        title: "Design de Bancos de Dados | Oracle Academy",
-        year: "12.2024",
-        description: `Análise de cenários de negócios complexos e na criação de um modelo de dados — uma representação conceitual das informações de uma organização. Examinar os requisitos de dados e a projetar um banco de dados relacional independente de fornecedor. Habilidades de colaboração em grupo e gerenciamento de projetos são desenvolvidas à medida que os modelos de diagramas de entidades e relacionamento são concluídos. Este curso culmina com um projeto que desafia os alunos a projetar uma solução de banco de dados para uma empresa ou organização.`,
-        skills: []
+        title: t.experiences[1].positions[4].title,
+        year: t.experiences[1].positions[4].year,
+        description: t.experiences[1].positions[4].description,
+        skills: t.experiences[1].positions[4].skills
       },
       {
-        title: "Defesa de Redes | Cisco",
-        year: "03.2025",
-        description: `Amplo conhecimento de técnicas de monitoramento e proteção de rede, incluindo controle de acesso, firewalls, segurança em nuvem e criptografia. Ele também está familiarizado com a avaliação e resposta a alertas de segurança.`,
-        skills: ["Segurança em nuvem","Firewalls","Hashing","Integridade e autenticidade","Segurança física","Criptografia pública e privada"]
+        title: t.experiences[1].positions[5].title,
+        year: t.experiences[1].positions[5].year,
+        description: t.experiences[1].positions[5].description,
+        skills: t.experiences[1].positions[5].skills
       },
     ],
   },
-];
-
+  ]
+  return { EXPERIENCES };
+}
