@@ -1,0 +1,13 @@
+export const PROFILE_INFO = {
+  role: 'Desenvolvedora Full Stack',
+  logo: 'Lumah Pereira',
+  slogan: 'Código, café e persistência!',
+  displayName: "Lumah Pereira",
+  email: "lumah.pereira26@gmail.com",
+  about: `
+Minha missão é criar soluções tecnológicas que facilitem o dia a dia das pessoas e ajudem negócios a crescerem de forma inteligente. Estou sempre em busca de aprender novas ferramentas, aprimorar minhas habilidades em desenvolvimento web e colaborar com times diversos e inovadores. 
+
+Motivada por desafios, apaixonada por código limpo e boas práticas, acredito que a tecnologia é um caminho para transformar realidades — e quero fazer parte dessa mudança.
+`,
+} as const;
+
