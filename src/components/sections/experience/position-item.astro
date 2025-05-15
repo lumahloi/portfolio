@@ -4,6 +4,8 @@ import { Code2, ChevronDown, ChevronUp } from "lucide-react";
 import type { ExperiencePosition } from "@/lib/types";
 import Badge from "@/components/ui/badge.astro";
 import { markdownToHtml } from "@/lib/markdown";
+import { getConstants } from "@/lib/constants/miscTranslation"
+const { SHOW_BUTTON } = getConstants(Astro.url.pathname)
 
 const { position } = Astro.props;
 ---
@@ -45,7 +47,7 @@ const { position } = Astro.props;
     <button
       class="toggle-btn mt-2 ml-7 flex cursor-pointer items-center gap-1 rounded-md border px-4 py-2 text-xs font-medium text-primary hover:underline focus:outline-none"
     >
-      <span class="toggle-text">Mostrar mais</span>
+      <span class="toggle-text">{SHOW_BUTTON.showMore}</span>
       <ChevronDown className="toggle-icon-down size-4" />
       <ChevronUp className="toggle-icon-up hidden size-4" />
     </button>
@@ -74,12 +76,12 @@ const { position } = Astro.props;
 
         if (expanded) {
           content.style.maxHeight = content.scrollHeight + "px";
-          toggleText.textContent = "Mostrar menos";
+          toggleText.textContent = SHOW_BUTTON.showLess;
           iconDown.classList.add("hidden");
           iconUp.classList.remove("hidden");
         } else {
           content.style.maxHeight = "0px";
-          toggleText.textContent = "Mostrar mais";
+          toggleText.textContent = SHOW_BUTTON.showMore;
           iconDown.classList.remove("hidden");
           iconUp.classList.add("hidden");
         }
