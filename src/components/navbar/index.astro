@@ -1,8 +1,9 @@
 ---
 import ModeToggle from "@/components/mode-toggle.astro";
 import NavLinks from "./nav-links.astro";
-import { PROFILE_INFO } from "@/lib/constants/profile";
 import LangToggle from "@/components/lang-toggle.astro";
+import { getConstants } from "@/lib/constants/profile"
+const { PROFILE_INFO } = getConstants(Astro.url.pathname)
 
 interface Props {
   className?: string;

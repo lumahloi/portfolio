@@ -1,6 +1,7 @@
 ---
-import { PROFILE_INFO } from "@/lib/constants/profile";
 import MarkdownRenderer from "@/components/ui/markdown-renderer.astro";
+import { getConstants } from "@/lib/constants/profile"
+const { PROFILE_INFO } = getConstants(Astro.url.pathname)
 
 import Box from "@/components/box/index.astro";
 import BoxHeader from "@/components/box/header.astro";

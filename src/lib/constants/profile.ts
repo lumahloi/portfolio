@@ -1,13 +1,18 @@
-export const PROFILE_INFO = {
-  role: 'Desenvolvedora Full Stack',
-  logo: 'Lumah Pereira',
-  slogan: 'Código, café e persistência!',
-  displayName: "Lumah Pereira",
-  email: "lumah.pereira26@gmail.com",
-  about: `
-Minha missão é criar soluções tecnológicas que facilitem o dia a dia das pessoas e ajudem negócios a crescerem de forma inteligente. Estou sempre em busca de aprender novas ferramentas, aprimorar minhas habilidades em desenvolvimento web e colaborar com times diversos e inovadores. 
+import pt from "@/i18n/pt.json";
+import en from "@/i18n/en.json";
 
-Motivada por desafios, apaixonada por código limpo e boas práticas, acredito que a tecnologia é um caminho para transformar realidades — e quero fazer parte dessa mudança.
-`,
-} as const;
+export function getConstants(currentPath: string) {
+  const lang = currentPath.startsWith("/en") ? "en" : "pt";
+  const t = lang === "en" ? en : pt;
 
+  const PROFILE_INFO = {
+    role: t.profile.role,
+    logo: t.profile.logo,
+    slogan: t.profile.slogan,
+    displayName: t.profile.displayName,
+    email: t.profile.email,
+    about: t.profile.about,
+  } as const;
+
+  return { PROFILE_INFO };
+}

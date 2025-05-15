@@ -1,7 +1,7 @@
 ---
 import { Picture } from "astro:assets";
-import ImgAvatar from "@/assets/louai-avatar.jpg";
-import { PROFILE_INFO } from "@/lib/constants/profile";
+import { getConstants } from "@/lib/constants/profile"
+const { PROFILE_INFO } = getConstants(Astro.url.pathname)
 
 interface Props {
   className?: string;

@@ -3,5 +3,13 @@
     "home": "Home",
     "articles": "Articles",
     "projects": "Projects"
+  },
+  "profile": {
+    "role": "Full Stack Developer",
+    "logo": "Lumah Pereira",
+    "slogan": "Code, coffee e persistence!",
+    "displayName": "Lumah Pereira",
+    "email": "lumah.pereira26@gmail.com",
+    "about": "My mission is to create technological solutions that make people's daily lives easier and help businesses grow intelligently. I'm always looking to learn new tools, improve my web development skills, and collaborate with diverse and innovative teams. Motivated by challenges, passionate about clean code and best practices, I believe that technology is a path to transforming realities — and I want to be part of that change."
   }
 }
