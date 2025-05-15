@@ -59,7 +59,7 @@ import LinkedinIcon from "@/components/ui/icons/linkedin.astro";
   <BoxContent className="space-y-3">
     <span class="flex items-center justify-start gap-2">
       <Briefcase className="size-4" />
-      Desenvolvendo software no
+      {PROFILE_INFO.working}
       <a
         href="https://www.mprj.mp.br/"
         target="_blank"
@@ -71,7 +71,7 @@ import LinkedinIcon from "@/components/ui/icons/linkedin.astro";
 
     <span class="flex items-center justify-start gap-2">
       <LinkedinIcon className="size-4" />
-      Vamos nos conectar no
+      {PROFILE_INFO.linkedin}
       <a
         href="https://www.linkedin.com/in/lumah-pereira"
         class="underline underline-offset-4"
@@ -83,7 +83,7 @@ import LinkedinIcon from "@/components/ui/icons/linkedin.astro";
 
     <span class="flex items-center justify-start gap-2">
       <GithubIcon className="size-4" />
-      Veja meus repositórios no
+      {PROFILE_INFO.github}
       <a
         href="https://github.com/lumahloi"
         class="underline underline-offset-4"

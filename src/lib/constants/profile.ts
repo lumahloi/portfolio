@@ -12,6 +12,9 @@ export function getConstants(currentPath: string) {
     displayName: t.profile.displayName,
     email: t.profile.email,
     about: t.profile.about,
+    working: t.profile.working,
+    linkedin: t.profile.linkedin,
+    github: t.profile.github,
   } as const;
 
   return { PROFILE_INFO };
