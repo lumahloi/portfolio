@@ -81,5 +81,10 @@
         }
       ]
     }
-  ]
+  ],
+  "experienceTitle": "Experiências profissionais",
+  "footer": {
+    "madeBy": "Feito por",
+    "source": "Disponível em"
+  }
 }

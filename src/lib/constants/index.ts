@@ -36,5 +36,11 @@ export function getConstants(currentPath: string) {
     },
   ];
 
-  return { NAV_LINKS, SOCIAL_LINKS };
+  const FOOTER_P = {
+    "madeBy": t.footer.madeBy,
+    "source": t.footer.source
+  }
+  
+
+  return { NAV_LINKS, SOCIAL_LINKS, FOOTER_P };
 }

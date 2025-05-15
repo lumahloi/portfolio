@@ -1,7 +1,7 @@
 ---
 // import { SOCIAL_LINKS } from "@/lib/constants";
 import { getConstants } from "@/lib/constants/index"
-const { SOCIAL_LINKS } = getConstants(Astro.url.pathname)
+const { SOCIAL_LINKS, FOOTER_P } = getConstants(Astro.url.pathname)
 ---
 
 <footer class="w-full border-t border-dashed md:border-b">
@@ -10,10 +10,10 @@ const { SOCIAL_LINKS } = getConstants(Astro.url.pathname)
   >
     <p class="text-sm text-foreground/70">
       Lumah Pereira | 
-      Feito por <a
+      {FOOTER_P.madeBy} <a
         href="https://github.com/Louai-Zokerburg"
         class="font-medium text-primary underline underline-offset-4">Louai.b</a
-      > • disponível no <a
+      > • {FOOTER_P.source} <a
         href="https://github.com/Louai-Zokerburg/louai"
         class="font-medium text-primary underline underline-offset-4">Github</a
       >

@@ -60,5 +60,8 @@ export function getConstants(currentPath: string) {
     ],
   },
   ]
-  return { EXPERIENCES };
+
+  const EXPERIENCE_TITLE = t.experienceTitle;
+  
+  return { EXPERIENCES, EXPERIENCE_TITLE };
 }
