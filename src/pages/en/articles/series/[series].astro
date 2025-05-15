@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import ArticleItem from "@/components/article-item.astro";
 import PageLayout from "@/layouts/page-layout.astro";
-
 import Pattern from "@/components/ui/pattern.astro";
 
 import Box from "@/components/box/index.astro";
@@ -10,22 +9,25 @@ import BoxTitle from "@/components/box/title.astro";
 import BoxHeader from "@/components/box/header.astro";
 
 export async function getStaticPaths() {
-  const articels = await getCollection("blog");
-  return articels.map(article => ({
-    params: { category: article.data.category },
-  }));
+  const articles = await getCollection("blog");
+
+  return articles
+    .map(article => ({
+      params: { series: article.data.series || "" },
+    }))
+    .filter(({ params }) => params.series !== "");
 }
 
-const { category } = Astro.params;
+const { series } = Astro.params;
 
 const articels = await getCollection("blog");
-const categoryArticles = articels.filter(
-  article => article.data.category === category
+const seiriesArticles = articels.filter(
+  article => article.data.series === series
 );
 
 // Page properties
-const title = category;
-const description = `Explore categorias em minha jornada profissional.`;
+const title = series;
+const description = `List of article series on my professional journey.`;
 ---
 
 <PageLayout backLink="/articles" description={description} title={title}>
@@ -33,12 +35,12 @@ const description = `Explore categorias em minha jornada profissional.`;
 
   <Box>
     <BoxHeader>
-      <BoxTitle>Artigos</BoxTitle>
+      <BoxTitle>Articles</BoxTitle>
     </BoxHeader>
     <div
       class="flex w-full flex-col items-start justify-start divide-y divide-border"
     >
-      {categoryArticles.map(article => <ArticleItem article={article} />)}
+      {seiriesArticles.map(article => <ArticleItem article={article} />)}
     </div>
   </Box>
 </PageLayout>

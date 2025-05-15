@@ -2,12 +2,15 @@
 import ModeToggle from "@/components/mode-toggle.astro";
 import NavLinks from "./nav-links.astro";
 import { PROFILE_INFO } from "@/lib/constants/profile";
+import LangToggle from "@/components/lang-toggle.astro";
 
 interface Props {
   className?: string;
 }
 
 const { className } = Astro.props;
+const pathname = Astro.url.pathname;
+const lang = pathname.startsWith("/en") ? "en" : "pt";
 ---
 
 <nav
@@ -26,6 +29,7 @@ const { className } = Astro.props;
     <div class="flex items-center justify-center gap-4">
       <NavLinks />
       <ModeToggle />
+      <LangToggle lang={lang} />
     </div>
   </div>
 </nav>

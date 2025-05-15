@@ -1,0 +1,13 @@
+---
+// src/components/ui/lang-toggle.astro
+const { lang } = Astro.props;
+const otherLang = lang === "en" ? "" : "en";
+const path = Astro.url.pathname.replace(/^\/en/, "");
+const newPath = otherLang ? `/en${path}` : path || "/";
+---
+<button
+  onclick={`window.location.pathname='${newPath}'`}
+  class="px-2 py-1 rounded border"
+>
+  {otherLang === "en" ? "English" : "Português"}
+</button>

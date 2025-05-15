@@ -45,7 +45,7 @@ const { position } = Astro.props;
     <button
       class="toggle-btn mt-2 ml-7 flex cursor-pointer items-center gap-1 rounded-md border px-4 py-2 text-xs font-medium text-primary hover:underline focus:outline-none"
     >
-      <span class="toggle-text">Show more</span>
+      <span class="toggle-text">Mostrar mais</span>
       <ChevronDown className="toggle-icon-down size-4" />
       <ChevronUp className="toggle-icon-up hidden size-4" />
     </button>
@@ -74,12 +74,12 @@ const { position } = Astro.props;
 
         if (expanded) {
           content.style.maxHeight = content.scrollHeight + "px";
-          toggleText.textContent = "Show less";
+          toggleText.textContent = "Mostrar menos";
           iconDown.classList.add("hidden");
           iconUp.classList.remove("hidden");
         } else {
           content.style.maxHeight = "0px";
-          toggleText.textContent = "Show more";
+          toggleText.textContent = "Mostrar mais";
           iconDown.classList.remove("hidden");
           iconUp.classList.add("hidden");
         }
