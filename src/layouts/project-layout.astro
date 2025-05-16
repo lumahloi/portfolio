@@ -29,6 +29,9 @@ interface Props {
 
 const { title, technologies, description, preview, sourceCode, image } =
   Astro.props;
+
+const path = Astro.url.pathname;
+const baseHref = path.startsWith("/en/") ? "/en/projects" : "/projects";
 ---
 
 <Layout title={`${title}`} ogImage={image} description={description}>
@@ -37,7 +40,7 @@ const { title, technologies, description, preview, sourceCode, image } =
   <main class="mx-auto min-h-screen max-w-3xl" aria-label="Main content">
     <Pattern className="h-14">
       <div class="z-1 mx-2 mt-auto flex w-full items-center justify-between">
-        <LinkBtn ariaLabel="Back btn" href="/projects">
+        <LinkBtn ariaLabel="Back btn" href={baseHref}>
           <ArrowLeft />
         </LinkBtn>
         <div>

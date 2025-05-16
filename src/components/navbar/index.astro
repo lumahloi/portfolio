@@ -12,6 +12,7 @@ interface Props {
 const { className } = Astro.props;
 const pathname = Astro.url.pathname;
 const lang = pathname.startsWith("/en") ? "en" : "pt";
+const baseHref = pathname.startsWith("/en") ? "/en/" : "/";
 ---
 
 <nav
@@ -23,7 +24,7 @@ const lang = pathname.startsWith("/en") ? "en" : "pt";
   <div
     class="mx-auto flex max-w-3xl items-center justify-between px-4 py-1 md:border-x"
   >
-    <a href="/">
+    <a href={baseHref}>
       <h1 class="text-xl font-bold">{PROFILE_INFO.logo}</h1>
     </a>
 

@@ -34,6 +34,9 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", {
 })
   .format(date)
   .replace(/\//g, ".");
+
+const path = Astro.url.pathname;
+const baseHref = path.startsWith("/en/") ? "/en/articles" : "/articles";
 ---
 
 <Layout title={`${title}`} ogImage={image} description={description}>
@@ -45,7 +48,7 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", {
         <LinkBtn
           ariaLabel="Back link"
           className="absolute bottom-0 left-2 z-1"
-          href="/articles"
+          href={baseHref}
         >
           <ArrowLeft />
         </LinkBtn>
