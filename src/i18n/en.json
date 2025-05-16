@@ -10,7 +10,7 @@
     "slogan": "Code, coffee e persistence!",
     "displayName": "Lumah Pereira",
     "email": "lumah.pereira26@gmail.com",
-    "about": "My mission is to create technological solutions that make people's daily lives easier and help businesses grow intelligently. I'm always looking to learn new tools, improve my web development skills, and collaborate with diverse and innovative teams. Motivated by challenges, passionate about clean code and best practices, I believe that technology is a path to transforming realities — and I want to be part of that change.",
+    "about": "My mission is to create technological solutions that make people's daily lives easier and help businesses grow intelligently. I'm always looking to learn new tools, improve my web development skills, and collaborate with diverse and innovative teams.\n\nMotivated by challenges, passionate about clean code and best practices, I believe that technology is a path to transforming realities — and I want to be part of that change.",
     "working": "Developing software at",
     "linkedin": "Let's connect on",
     "github": "Check my repos on",
@@ -23,7 +23,7 @@
           {
             "title": "Full Stack Development Intern",
             "year": "07.2024 - the moment",
-            "description": "- ♦ Experience in the development of web applications;- ♦ Support in the technical documentation of projects, ensuring organization and clarity for the team;- ♦ Active participation in meetings, contributing with daily updates and task alignment;- ♦ Code versioning and continuous integration;- ♦ Support in the maintenance and organization of environments;- ♦ Execution of activities such as code refactoring, unit and manual testing, development of new features and creation of technical reports;",
+            "description": "- ♦ Experience in the development of web applications;\n- ♦ Support in the technical documentation of projects, ensuring organization and clarity for the team;\n- ♦ Active participation in meetings, contributing with daily updates and task alignment;\n- ♦ Code versioning and continuous integration;\n- ♦ Support in the maintenance and organization of environments;\n- ♦ Execution of activities such as code refactoring, unit and manual testing, development of new features and creation of technical reports;",
             "skills": [
               "JavaScript",
               "TypeScript",
