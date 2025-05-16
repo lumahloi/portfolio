@@ -11,7 +11,7 @@ const { article } = Astro.props;
 
 const formattedDate = new Intl.DateTimeFormat("en-GB", {
   day: "2-digit",
-  month: "short",
+  month: "2-digit",
   year: "numeric",
 }).format(article.data.pubDatetime);
 
@@ -49,7 +49,7 @@ const slug = article.id.startsWith("pt/")
       }
     </ul>
     <p class="text-xs text-foreground">
-      {formattedDate} | {getReadingTime(article.body!).text}
+      {formattedDate} | {Math.floor(getReadingTime(article.body!).minutes) + " min"}
     </p>
   </div>
 </a>
