@@ -3,7 +3,6 @@ import GithubIcon from '@/components/ui/icons/github.astro'
 import pt from "@/i18n/pt.json";
 import en from "@/i18n/en.json";
 
-// This should be passed from your Astro components
 export function getConstants(currentPath: string) {
   const lang = currentPath.startsWith("/en") ? "en" : "pt";
   const t = lang === "en" ? en : pt;
@@ -11,7 +10,7 @@ export function getConstants(currentPath: string) {
   const NAV_LINKS = [
     {
       label: t.nav.home,
-      href: lang === "en" ? "/en/" : "/",
+      href: lang === "en" ? "/en" : "/",
     },
     {
       label: t.nav.articles,

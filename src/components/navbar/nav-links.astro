@@ -1,20 +1,37 @@
 ---
-// import { NAV_LINKS } from "@/lib/constants/index";
 import { cn } from "@/lib/utils";
 import { getConstants } from "@/lib/constants/index"
 const { NAV_LINKS } = getConstants(Astro.url.pathname)
 
 const pathname = Astro.url.pathname;
 
-// Remove trailing slash from current pathname if exists
 const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
 const isActive = (path: string) => {
+  if (currentPath === path) return true;
+
+  if (
+    currentPath.startsWith("/en/") || 
+    currentPath === "/en" || 
+    path.startsWith("/en/") || 
+    path === "/en"
+  ) {
+    return false;
+  }
+
+  if (currentPath === "/" || path === "/") {
+    return currentPath === path;
+  }
+
   const currentPathArray = currentPath.split("/").filter(p => p.trim());
   const pathArray = path.split("/").filter(p => p.trim());
 
-  return currentPath === path || currentPathArray[0] === pathArray[0];
+  return (
+    currentPathArray.length > 0 &&
+    pathArray.length > 0 &&
+    currentPathArray[0] === pathArray[0]
+  );
 };
 ---
 
