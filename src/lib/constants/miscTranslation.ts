@@ -9,6 +9,8 @@ export function getConstants(currentPath: string) {
     showMore: t.misc.showMore,
     showLess: t.misc.showLess,
   }
+
+  const THISPG_TEXT = t.misc.thisPage;
   
-  return { SHOW_BUTTON };
+  return { SHOW_BUTTON, THISPG_TEXT };
 }
