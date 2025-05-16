@@ -26,7 +26,9 @@ const series = [
 ];
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const articles = await getCollection("blog", ({ data }) => !data.draft);
+  const articles = await getCollection("blog", ({ data, id }) => 
+    !data.draft && id.startsWith("en/") // Filtra apenas inglês
+  );
   const sortedArticles = articles.sort(
     (a, b) => b.data.pubDatetime.getTime() - a.data.pubDatetime.getTime()
   );
@@ -50,7 +52,7 @@ const { page } = Astro.props;
       <div class="flex flex-wrap items-center justify-start gap-x-4 gap-y-3">
         {
           series.map(seriesItem => (
-            <LinkTag href={`articles/series/${seriesItem}`} tag={seriesItem} />
+            <LinkTag href={`/en/articles/series/${seriesItem}`} tag={seriesItem} />
           ))
         }
       </div>
@@ -67,7 +69,7 @@ const { page } = Astro.props;
       <div class="flex flex-wrap items-center justify-start gap-x-4 gap-y-3">
         {
           categories.map(category => (
-            <LinkTag href={`articles/categories/${category}`} tag={category} />
+            <LinkTag href={`/en/articles/categories/${category}`} tag={category} />
           ))
         }
       </div>

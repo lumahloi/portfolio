@@ -9,14 +9,16 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ id, data }) => 
+    id.startsWith("pt/") && !data.draft
+  );
 
-  const postResult = posts.map(post => ({
-    params: { slug: post.id },
+  return posts.map(post => ({
+    params: { 
+      slug: post.id.replace("pt/", "") // Remove o prefixo "pt/"
+    },
     props: { post },
   }));
-
-  return postResult;
 }
 
 const { post } = Astro.props;

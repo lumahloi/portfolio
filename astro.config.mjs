@@ -8,9 +8,13 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://louai.site',
+  site: 'https://lumah-pereira.vercel.app',
   integrations: [react(), mdx()],
   vite: {
     plugins: [tailwindcss()],
   },
+  redirects: {
+    '/articles/pt/:slug': '/articles/:slug',
+    '/articles/en/:slug': '/en/articles/:slug'
+  }
 });

@@ -26,7 +26,10 @@ const series = [
 ];
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const articles = await getCollection("blog", ({ data }) => !data.draft);
+  const articles = await getCollection("blog", ({ data, id }) => 
+    !data.draft && id.startsWith("pt/") // Filtra apenas português
+  );
+  
   const sortedArticles = articles.sort(
     (a, b) => b.data.pubDatetime.getTime() - a.data.pubDatetime.getTime()
   );

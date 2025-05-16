@@ -14,10 +14,14 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", {
   month: "short",
   year: "numeric",
 }).format(article.data.pubDatetime);
+
+const slug = article.id.startsWith("pt/") 
+  ? article.id.replace("pt/", "")
+  : article.id.replace("en/", "");
 ---
 
 <a
-  href={`/articles/${article.id}`}
+  href={`/${article.id.startsWith("en/") ? 'en/' : ''}articles/${slug}`}
   class="group flex w-full cursor-pointer items-center"
 >
   <NotebookPen className="mx-5 size-5 shrink-0 text-muted-foreground" />
