@@ -1,0 +1,117 @@
+---
+name: Fani, a Fangirl Chat Bot
+image: /og-images/projects/furia-fangirl.png
+sourceCode: https://github.com/lumahloi/furia-fangirl
+technologies:
+  - React
+  - TypeScript
+  - Flask
+  - SQLite
+  - OpenAI API
+  - Vercel
+  - Render
+  - Docusaurus
+  - Python
+description: ChatBot especializado em informações sobre o time de Counter Strike da FURIA, desenvolvido com TypeScript, Flask, SQLite e API OpenAI. 
+---
+
+# Fani, a Fangirl Chat Bot
+**Fani, um ChatBot Fangirl** é um ChatBot feito especialmente para fãs dos times de **CS** da **FURIA** que querem saber todas as informações sobre eles. Chega de abrir 300 telas para fazer perguntas sobre seu time favorito ou procurar informações que você não encontra em nenhum outro lugar, basta perguntar para **Fani** e o histórico de suas mensagens será salvo.
+
+## Screenshots
+![Screenshot](/og-images/projects/furia-fangirl.png)
+
+## Funcionalidades
+- Receber mensagens sobre a equipe de CS da FURIA e responder com precisão;
+- Interpretar o contexto da mensagem, resultando na escolha correta do banco de dados a ser utilizado;
+- Respeitar as regras e seguir o contexto de responder apenas a perguntas relacionadas à FURIA.
+
+## Como executar localmente
+Guia passo a passo de como executar o projeto localmente em sua máquina.
+
+### Pré-requisitos
+- **Git**: instale a versão mais recente do site oficial clicando [aqui](https://git-scm.com/downloads);
+- **Node.js**: instale a versão mais recente do site oficial clicando [aqui](https://nodejs.org/pt/download);
+- **Python**: instale a versão mais recente do site oficial clicando [aqui](https://www.python.org/downloads/);
+
+### Instalando
+Primeiro, clone o repositório.
+```bash
+git clone https://github.com/lumahloi/furia-fangirl/
+```
+
+Navegue até o diretório ```frontend```.
+```bash
+cd frontend
+```
+
+Instale suas dependências.
+```bash
+npm install
+```
+
+Navegue até o diretório ```backend```.
+```bash
+cd ../backend
+```
+
+Instale suas dependências.
+```bash
+pip install -r requirements.txt
+```
+
+### Variáveis ​​de ambiente
+No arquivo ```.env.example```, você pode visualizar as variáveis ​​de ambiente usadas pelo projeto.
+- Crie o arquivo ```.env``` em ```frontend``` e atribua o valor à variável ```REACT_APP_API_URL```;
+- Crie o arquivo ```.env``` em ```backend``` e atribua o valor à variável ```OPENAI_KEY```.
+
+### Executando localmente
+Abra um terminal e execute o servidor ```frontend``` no diretório ```frontend```.
+```bash
+npm run start
+```
+
+Abra outro terminal e execute o servidor ```backend``` no diretório ```backend```.
+```bash
+python app.py
+```
+
+## APIs
+Abaixo está uma lista de todos os endpoints disponíveis.
+
+### Enviar mensagem
+#### URL
+```bash
+POST /api/query/
+```
+
+#### Cabeçalho da solicitação
+```bash
+Content-Type: application/json
+```
+
+#### Corpo da solicitação
+```bash
+{
+"input": "qual o esquadrão atual da FURIA?"
+
+}
+```
+
+#### Exemplo de resposta
+```bash
+{ 
+"response": "O esquadrão atual da FURIA no CS:GO \u00e9 composto por Yuri \"yuurih\" Boian, Kaike 
+\"KSCERATO\" Cerato, Gabriel \"FalleN\" Toledo, Danil \"molodoy\" Golubenko e Mareks \"YEKINDAR\" 
+Ga\u013cinskis (este \u00altimo como substituto). Sidnei \"sidde\" Macedo atua como técnico da 
+equipe."
+}
+```
+
+## Possíveis melhorias
+- [ ] Acrescentar contexto sobre Fani e a possibilidade de ação;
+- [ ] Lista de tópicos para o usuário que Fani pode responder;
+- [ ] Sistema de cache de perguntas;
+- [ ] Armazenamento de chats em banco de dados;
+- [ ] Histórico de bate-papo;
+- [ ] Criação de contas.

@@ -8,14 +8,24 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = await getCollection("projects", ({ id }) => 
+    id.startsWith("en/")
+  );
 
-  const project = projects.map(project => ({
-    params: { projectId: project.id },
-    props: { project },
-  }));
-
-  return project;
+  return projects
+    .filter(project => project.id.startsWith("en/"))
+    .map(project => {
+      const slug = project.id.replace(/^en\//, "");
+      const projectId = project.id.replace(/^en\//, "");
+      return {
+        params: {
+          lang: "en",
+          slug,
+          projectId,
+        },
+        props: { project },
+      };
+    });
 }
 
 const { project } = Astro.props;

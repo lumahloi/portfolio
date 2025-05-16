@@ -8,14 +8,17 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = await getCollection("projects", ({ id }) => 
+    id.startsWith("pt/")
+  );
 
-  const project = projects.map(project => ({
-    params: { projectId: project.id },
+  return projects.map(project => ({
+    params: {
+      slug: project.id.replace(/^pt\//, ""),
+      projectId: project.id.replace(/^pt\//, ""), // remove "pt/"
+    },
     props: { project },
   }));
-
-  return project;
 }
 
 const { project } = Astro.props;

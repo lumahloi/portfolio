@@ -10,10 +10,16 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const [lang, ...slugParts] = project.id.split("/");
+const slug = slugParts.join("/");
+
+const href = lang === "pt" 
+  ? `/projects/${slug}` 
+  : `/${lang}/projects/${slug}`;
 ---
 
 <a
-  href={`/projects/${project.id}`}
+  href={href}
   class="flex cursor-pointer items-center not-last:border-b"
 >
   <FolderCodeIcon className="mx-4.5 size-5 shrink-0 text-muted-foreground" />

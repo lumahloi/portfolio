@@ -1,0 +1,40 @@
+---
+name: MovieNews
+image: /og-images/projects/movienews-1.png
+sourceCode: https://github.com/lumahloi/movienews
+technologies:
+  - Java
+  - Jetty
+  - Maven
+  - OMDB API
+  - News API
+description: Site para busca de filmes e visualização de notícias, desenvolvido com Java, OMDBApi e NewsApi.
+---
+
+# MovieNews
+Site que busca filmes e retorna notícias relacionadas utilizando as APIs **OMDBApi** e **NewsApi**.
+
+## Funcionalidades
+- Busca e exibição de filmes por título;
+- Exibição de detalhes e notícias do filme selecionado;
+- Exibição do histórico de buscas;
+- Favoritar filmes.
+
+## Screenshots
+![Home](/og-images/projects/movienews-1.png)
+![Home](/og-images/projects/movienews-2.png)
+
+## Pré-requisitos
+- **Java JDK 8**: verifique a instalação no [site oficial](https://maven.apache.org/install.html)
+- **Apache Maven 3.6+**: verifique a instalação no [site oficial](https://www.oracle.com/br/java/technologies/javase/javase8-archive-downloads.html)
+
+## Instalação
+- **Compile o projeto Maven**
+```bash
+mvn clean package
+```
+
+- **Execute o servidor Jetty**
+```bash
+mvn jetty:run
+```

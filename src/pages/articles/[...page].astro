@@ -17,7 +17,7 @@ import PageLayout from "@/layouts/page-layout.astro";
 
 const articles = await getCollection("blog", ({ data, id }) => 
     !data.draft && id.startsWith("pt/") // Filtra apenas português
-  );
+);
 const categories = [...new Set(articles.map(article => article.data.category))];
 const series = [
   ...new Set(
